@@ -1,3 +1,3 @@
-# oic-todo
+# todoom
 
 おもしろいTODOアプリです。
