@@ -42,5 +42,5 @@ $ php vencor/bin/homestead make
 $ vagrant up
 $ vagrant ssh
 $ npm run watch
-$ open {your_private_ip_address}:8000
+$ open http://{your_private_ip_address}:8000
 ```
