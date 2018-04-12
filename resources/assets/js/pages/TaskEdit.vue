@@ -1,5 +1,5 @@
 <template>
     <div>
-        <router-view></router-view>
+        task-edit
     </div>
 </template>
