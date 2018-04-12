@@ -16,3 +16,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('token')->group(function () {
+    Route::post('/auth', 'AuthController@token');
+    Route::post('/destroy', 'AuthController@destroy');
+});
+
+Route::prefix('task')->group(function () {
+    Route::post('/add', 'TaskController@add');
+    Route::post('/list', 'TaskController@list');
+    Route::post('/update', 'TaskController@update');
+    Route::post('/delete', 'TaskController@delete');
+});
