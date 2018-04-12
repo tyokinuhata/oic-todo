@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Navi from '../layouts/Navi'
+    import Navi from './Navi'
 
     export default {
         components: {
