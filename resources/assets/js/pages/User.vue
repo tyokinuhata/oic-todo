@@ -1,7 +1,7 @@
 <template>
     <div>
         <navi></navi>
-        config
+        user
     </div>
 </template>
 
