@@ -1,6 +1,7 @@
 <template>
     <div>
         <navi></navi>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -10,6 +11,6 @@
     export default {
         components: {
             Navi
-        },
+        }
     }
 </script>
