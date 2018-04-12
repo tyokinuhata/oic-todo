@@ -1,6 +1,28 @@
 <template>
     <div>
-        <a href="/register">サインアップ</a>
-        index
+        <h1>todoom</h1>
+        <p>todoomはポイントで競い合う新感覚TODOアプリです。</p>
+        <div>
+            <div>
+                <label for="user-id">ユーザID</label>
+                <input type="text" id="user-id" v-model="userId">
+            </div>
+            <div>
+                <label for="password">パスワード</label>
+                <input type="password" id="password" v-model="password">
+            </div>
+            <a href="/register">サインアップはこちら</a>
+        </div>
     </div>
 </template>
+
+<script>
+    export default {
+        data () {
+            return {
+                userId: '',
+                password: ''
+            }
+        },
+    }
+</script>
