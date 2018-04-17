@@ -50233,9 +50233,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "/register" } }, [
-        _vm._v("サインアップはこちら")
-      ])
+      _c("a", { attrs: { href: "/signup" } }, [_vm._v("サインアップはこちら")])
     ])
   ])
 }

@@ -14,9 +14,3 @@
 Route::get('/', function () {
     return view('index');
 });
-
-//Auth::routes();
-
-Route::get('/signup', function () {
-    return view('auth.register');
-})->name('signup');

@@ -11,7 +11,7 @@
                 <label for="password">パスワード</label>
                 <input type="password" id="password" v-model="password">
             </div>
-            <a href="/register">サインアップはこちら</a>
+            <a href="/signup">サインアップはこちら</a>
         </div>
     </div>
 </template>
