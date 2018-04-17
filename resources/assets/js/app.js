@@ -8,6 +8,7 @@ Vue.use(VueRouter)
 Vue.component('app', require('./components/App'))
 
 import Index from './pages/Index'
+import Signup from './pages/Signup'
 import Task from './pages/Task'
 import TaskEdit from './pages/TaskEdit'
 import TaskOld from './pages/TaskOld'
@@ -20,6 +21,10 @@ const routes = [
     {
         path: '/',
         component: Index
+    },
+    {
+        path: '/signup',
+        component: Signup
     },
     {
         path: '/task',

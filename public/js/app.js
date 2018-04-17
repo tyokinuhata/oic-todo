@@ -13988,20 +13988,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_Index__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_Index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__pages_Index__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_Task__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_Task___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pages_Task__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_TaskEdit__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_TaskEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__pages_TaskEdit__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_TaskOld__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_TaskOld___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__pages_TaskOld__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_TaskOldEdit__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_TaskOldEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__pages_TaskOldEdit__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_User__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_User___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__pages_User__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Config__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__pages_Config__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Rank__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Rank___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_Rank__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_Signup__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_Signup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pages_Signup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_Task__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_Task___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__pages_Task__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_TaskEdit__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_TaskEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__pages_TaskEdit__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_TaskOld__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_TaskOld___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__pages_TaskOld__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_TaskOldEdit__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_TaskOldEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__pages_TaskOldEdit__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_User__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_User___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__pages_User__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Config__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_Config__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Rank__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Rank___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__pages_Rank__);
 __webpack_require__(14);
 
 window.Vue = __webpack_require__(37);
@@ -14020,30 +14022,34 @@ Vue.component('app', __webpack_require__(40));
 
 
 
+
 var routes = [{
     path: '/',
     component: __WEBPACK_IMPORTED_MODULE_1__pages_Index___default.a
 }, {
+    path: '/signup',
+    component: __WEBPACK_IMPORTED_MODULE_2__pages_Signup___default.a
+}, {
     path: '/task',
-    component: __WEBPACK_IMPORTED_MODULE_2__pages_Task___default.a
+    component: __WEBPACK_IMPORTED_MODULE_3__pages_Task___default.a
 }, {
     path: '/task/edit',
-    component: __WEBPACK_IMPORTED_MODULE_3__pages_TaskEdit___default.a
+    component: __WEBPACK_IMPORTED_MODULE_4__pages_TaskEdit___default.a
 }, {
     path: '/task/old',
-    component: __WEBPACK_IMPORTED_MODULE_4__pages_TaskOld___default.a
+    component: __WEBPACK_IMPORTED_MODULE_5__pages_TaskOld___default.a
 }, {
     path: '/task/old/edit',
-    component: __WEBPACK_IMPORTED_MODULE_5__pages_TaskOldEdit___default.a
+    component: __WEBPACK_IMPORTED_MODULE_6__pages_TaskOldEdit___default.a
 }, {
     path: '/rank',
-    component: __WEBPACK_IMPORTED_MODULE_8__pages_Rank___default.a
+    component: __WEBPACK_IMPORTED_MODULE_9__pages_Rank___default.a
 }, {
     path: '/user/:id',
-    component: __WEBPACK_IMPORTED_MODULE_6__pages_User___default.a
+    component: __WEBPACK_IMPORTED_MODULE_7__pages_User___default.a
 }, {
     path: '/config',
-    component: __WEBPACK_IMPORTED_MODULE_7__pages_Config___default.a
+    component: __WEBPACK_IMPORTED_MODULE_8__pages_Config___default.a
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
@@ -50182,59 +50188,65 @@ var render = function() {
     _vm._v(" "),
     _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
     _vm._v(" "),
-    _c("div", [
-      _c("div", [
-        _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.userId,
-              expression: "userId"
-            }
-          ],
-          attrs: { type: "text", id: "user-id" },
-          domProps: { value: _vm.userId },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+    _c(
+      "div",
+      [
+        _c("div", [
+          _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.userId,
+                expression: "userId"
               }
-              _vm.userId = $event.target.value
-            }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("label", { attrs: { for: "password" } }, [_vm._v("パスワード")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.password,
-              expression: "password"
-            }
-          ],
-          attrs: { type: "password", id: "password" },
-          domProps: { value: _vm.password },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+            ],
+            attrs: { type: "text", id: "user-id" },
+            domProps: { value: _vm.userId },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.userId = $event.target.value
               }
-              _vm.password = $event.target.value
             }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/signup" } }, [_vm._v("サインアップはこちら")])
-    ])
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("label", { attrs: { for: "password" } }, [_vm._v("パスワード")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.password,
+                expression: "password"
+              }
+            ],
+            attrs: { type: "password", id: "password" },
+            domProps: { value: _vm.password },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.password = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/signup" } }, [
+          _vm._v("サインアップはこちら")
+        ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -50778,6 +50790,203 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     }
 });
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(11)
+/* script */
+var __vue_script__ = __webpack_require__(76)
+/* template */
+var __vue_template__ = __webpack_require__(77)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/pages/Signup.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-639c8195", Component.options)
+  } else {
+    hotAPI.reload("data-v-639c8195", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            userId: '',
+            password: '',
+            confirmPassword: ''
+        };
+    }
+});
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", [_vm._v("todoom")]),
+    _vm._v(" "),
+    _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c("div", [
+          _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.userId,
+                expression: "userId"
+              }
+            ],
+            attrs: { type: "text", id: "user-id" },
+            domProps: { value: _vm.userId },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.userId = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("label", { attrs: { for: "password" } }, [_vm._v("パスワード")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.password,
+                expression: "password"
+              }
+            ],
+            attrs: { type: "password", id: "password" },
+            domProps: { value: _vm.password },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.password = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("label", { attrs: { for: "confirm-password" } }, [
+            _vm._v("パスワード(確認)")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.confirmPassword,
+                expression: "confirmPassword"
+              }
+            ],
+            attrs: { type: "password", id: "confirm-password" },
+            domProps: { value: _vm.confirmPassword },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.confirmPassword = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/" } }, [
+          _vm._v("サインアップはこちら")
+        ])
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-639c8195", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

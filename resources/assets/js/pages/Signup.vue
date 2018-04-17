@@ -11,7 +11,11 @@
                 <label for="password">パスワード</label>
                 <input type="password" id="password" v-model="password">
             </div>
-            <router-link to="/signup">サインアップはこちら</router-link>
+            <div>
+                <label for="confirm-password">パスワード(確認)</label>
+                <input type="password" id="confirm-password" v-model="confirmPassword">
+            </div>
+            <router-link to="/">サインアップはこちら</router-link>
         </div>
     </div>
 </template>
@@ -21,7 +25,8 @@
         data () {
             return {
                 userId: '',
-                password: ''
+                password: '',
+                confirmPassword: ''
             }
         },
     }
