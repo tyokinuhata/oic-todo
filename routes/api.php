@@ -17,8 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('token')->group(function () {
-    Route::post('/auth', 'AuthController@token');
+Route::prefix('auth')->group(function () {
+    Route::post('/register', 'AuthController@register');
+    Route::post('/token', 'AuthController@token');
     Route::post('/destroy', 'AuthController@destroy');
 });
 
