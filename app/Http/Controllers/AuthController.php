@@ -25,10 +25,13 @@ class AuthController extends Controller {
         if ($exist) return response('Authorized', 401);
 
         // 登録処理
-        DB::table('user')->insert([
+        DB::table('users')->insert([
             'user_id' => $request->user_id,
             'password' => password_hash($request->password, PASSWORD_DEFAULT)
         ]);
+
+        $token = password_hash(strval(time()) + $request->user_id + $request->password, PASSWORD_DEFAULT);
+        User::where('user_id', $request->user_id)->where('password', password_hash($request->password, PASSWORD_DEFAULT))->update([ 'token' => $token ]);
         return response('OK', 200);
     }
 

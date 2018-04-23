@@ -50253,6 +50253,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -50261,6 +50262,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             password: '',
             confirmPassword: ''
         };
+    },
+
+    methods: {
+        signup: function signup() {
+            axios.post('/api/auth/register', {
+                user_id: this.userId,
+                password: this.password,
+                password_confirm: this.confirmPassword
+            }).then(function (response) {
+                console.log(response.data);
+            }).catch(function (error) {
+                console.log(error.response);
+            });
+        }
     }
 });
 
@@ -50356,6 +50371,19 @@ var render = function() {
             }
           })
         ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                _vm.signup()
+              }
+            }
+          },
+          [_vm._v("サインアップ")]
+        ),
         _vm._v(" "),
         _c("router-link", { attrs: { to: "/" } }, [
           _vm._v("サインインはこちら")

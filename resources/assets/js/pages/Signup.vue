@@ -15,6 +15,7 @@
                 <label for="confirm-password">パスワード(確認)</label>
                 <input type="password" id="confirm-password" v-model="confirmPassword">
             </div>
+            <button type="button" @click="signup()">サインアップ</button>
             <router-link to="/">サインインはこちら</router-link>
         </div>
     </div>
@@ -29,5 +30,20 @@
                 confirmPassword: ''
             }
         },
+        methods: {
+            signup () {
+                axios.post('/api/auth/register', {
+                    user_id: this.userId,
+                    password: this.password,
+                    password_confirm: this.confirmPassword
+                })
+                    .then(response => {
+                        console.log(response.data)
+                    })
+                    .catch(error => {
+                        console.log(error.response)
+                    })
+            }
+        }
     }
 </script>
