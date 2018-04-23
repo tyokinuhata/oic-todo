@@ -15,7 +15,7 @@
                 <label for="confirm-password">パスワード(確認)</label>
                 <input type="password" id="confirm-password" v-model="confirmPassword">
             </div>
-            <router-link to="/">サインアップはこちら</router-link>
+            <router-link to="/">サインインはこちら</router-link>
         </div>
     </div>
 </template>
