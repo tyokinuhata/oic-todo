@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use DB;
+use Hash;
 
 /**
  * 認証に関するコントローラ.
@@ -26,7 +27,7 @@ class AuthController extends Controller {
         // 登録処理
         DB::table('user')->insert([
             'user_id' => $request->user_id,
-            'password' => $request->password
+            'password' => password_hash($request->password, PASSWORD_DEFAULT)
         ]);
         return response('OK', 200);
     }
@@ -41,14 +42,24 @@ class AuthController extends Controller {
         $exist = User::where('user_id', $request->user_id)->where('password', $request->password)->first();
         if ($exist) {
             $token = password_hash(strval(time()) + $request->user_id + $request->password, PASSWORD_DEFAULT);
-            User::where('user_id', $request->user_id)->where('password', $request->password)->update([ 'token' => $token ]);
+            User::where('user_id', $request->user_id)->where('password', password_hash($request->password, PASSWORD_DEFAULT))->update([ 'token' => $token ]);
             return response($token, 200);
         } else {
             return response('Authorized', 401);
         }
     }
 
+    /**
+     * アクセストークンを取得し, 該当するアクセストークンをDBから削除し, サインアウトする.
+     * 成功すれば成功したことを通知し, 失敗すればエラーを返す.
+     */
     public function destroy (Request $request) {
-
+        $exist = User::where('token', $request->token)->first();
+        if ($exist) {
+            User::where('token', $request->token)->update([ 'token' => null ]);
+            return response('OK', 200);
+        } else {
+            return response('Bad Request', 400);
+        }
     }
 }
