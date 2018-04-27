@@ -3,6 +3,9 @@ require('./bootstrap')
 window.Vue = require('vue')
 
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
 Vue.use(VueRouter)
 
 Vue.component('app', require('./components/App'))
@@ -60,7 +63,23 @@ const router = new VueRouter({
     routes
 })
 
+const store = new Vuex.Store({
+    state: {
+
+    },
+    getters: {
+
+    },
+    mutations: {
+
+    },
+    actions: {
+
+    }
+})
+
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    store
 })
