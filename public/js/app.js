@@ -51079,6 +51079,7 @@ var render = function() {
                 expression: "userId"
               }
             ],
+            staticClass: "form-control",
             attrs: { type: "text", id: "user-id" },
             domProps: { value: _vm.userId },
             on: {
@@ -51104,6 +51105,7 @@ var render = function() {
                 expression: "password"
               }
             ],
+            staticClass: "form-control",
             attrs: { type: "password", id: "password" },
             domProps: { value: _vm.password },
             on: {
@@ -51264,6 +51266,7 @@ var render = function() {
                 expression: "userId"
               }
             ],
+            staticClass: "form-control",
             attrs: { type: "text", id: "user-id" },
             domProps: { value: _vm.userId },
             on: {
@@ -51289,6 +51292,7 @@ var render = function() {
                 expression: "password"
               }
             ],
+            staticClass: "form-control",
             attrs: { type: "password", id: "password" },
             domProps: { value: _vm.password },
             on: {
@@ -51316,6 +51320,7 @@ var render = function() {
                 expression: "confirmPassword"
               }
             ],
+            staticClass: "form-control",
             attrs: { type: "password", id: "confirm-password" },
             domProps: { value: _vm.confirmPassword },
             on: {
@@ -51332,6 +51337,7 @@ var render = function() {
         _c(
           "button",
           {
+            staticClass: "btn btn-primary",
             attrs: { type: "button" },
             on: {
               click: function($event) {

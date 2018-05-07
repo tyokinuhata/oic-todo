@@ -5,17 +5,17 @@
         <div>
             <div>
                 <label for="user-id">ユーザID</label>
-                <input type="text" id="user-id" v-model="userId">
+                <input type="text" id="user-id" class="form-control" v-model="userId">
             </div>
             <div>
                 <label for="password">パスワード</label>
-                <input type="password" id="password" v-model="password">
+                <input type="password" id="password" class="form-control" v-model="password">
             </div>
             <div>
                 <label for="confirm-password">パスワード(確認)</label>
-                <input type="password" id="confirm-password" v-model="confirmPassword">
+                <input type="password" id="confirm-password" class="form-control" v-model="confirmPassword">
             </div>
-            <button type="button" @click="signup()">サインアップ</button>
+            <button type="button" class="btn btn-primary" @click="signup()">サインアップ</button>
             <router-link to="/">サインインはこちら</router-link>
         </div>
     </div>

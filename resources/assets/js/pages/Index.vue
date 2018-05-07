@@ -5,11 +5,11 @@
         <div>
             <div>
                 <label for="user-id">ユーザID</label>
-                <input type="text" id="user-id" v-model="userId">
+                <input type="text" id="user-id" class="form-control" v-model="userId">
             </div>
             <div>
                 <label for="password">パスワード</label>
-                <input type="password" id="password" v-model="password">
+                <input type="password" id="password" class="form-control" v-model="password">
             </div>
             <router-link to="/signup">サインアップはこちら</router-link>
         </div>
