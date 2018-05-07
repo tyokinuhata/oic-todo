@@ -38,8 +38,8 @@
                     password_confirm: this.confirmPassword
                 })
                     .then(response => {
-                        // ここでトークンを保存, リダイレクト
-                        document.cookie = 'token="' + response.data + '"'
+                        document.cookie = 'token=' + response.data
+                        this.$router.push({ path: '/task' })
                     })
                     .catch(error => {
                         console.log(error.response)

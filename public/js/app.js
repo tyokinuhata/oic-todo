@@ -50270,13 +50270,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         signup: function signup() {
+            var _this = this;
+
             axios.post('/api/auth/register', {
                 user_id: this.userId,
                 password: this.password,
                 password_confirm: this.confirmPassword
             }).then(function (response) {
-                // ここでトークンを保存, リダイレクト
-                document.cookie = 'token="' + response.data + '"';
+                document.cookie = 'token=' + response.data;
+                _this.$router.push({ path: '/task' });
             }).catch(function (error) {
                 console.log(error.response);
             });
