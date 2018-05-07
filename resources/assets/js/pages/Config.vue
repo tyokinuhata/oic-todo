@@ -1,7 +1,9 @@
 <template>
     <div>
         <navi></navi>
-        config
+        <div class="container">
+            config
+        </div>
     </div>
 </template>
 

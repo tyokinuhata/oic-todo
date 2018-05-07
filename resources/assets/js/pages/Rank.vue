@@ -1,7 +1,9 @@
 <template>
     <div>
         <navi></navi>
-        rank
+        <div class="container">
+            rank
+        </div>
     </div>
 </template>
 

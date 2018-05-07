@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h1>todoom</h1>
         <p>todoomはポイントで競い合う新感覚TODOアプリです。</p>
         <div>

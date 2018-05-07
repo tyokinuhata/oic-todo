@@ -51059,7 +51059,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v("todoom")]),
     _vm._v(" "),
     _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
@@ -51244,7 +51244,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v("todoom")]),
     _vm._v(" "),
     _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
@@ -51422,6 +51422,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -51570,7 +51572,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("navi"), _vm._v("\n    task\n")], 1)
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_vm._v("\n        task\n    ")])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51637,7 +51647,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    task-edit\n")])
+  return _c("div", { staticClass: "container" }, [_vm._v("\n    task-edit\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51704,7 +51714,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    task-old\n")])
+  return _c("div", { staticClass: "container" }, [_vm._v("\n    task-old\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51771,7 +51781,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    task-old-edit\n")])
+  return _c("div", { staticClass: "container" }, [
+    _vm._v("\n    task-old-edit\n")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51845,6 +51857,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -51862,7 +51876,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("navi"), _vm._v("\n    user\n")], 1)
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_vm._v("\n        user\n    ")])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51936,6 +51958,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -51953,7 +51977,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("navi"), _vm._v("\n    config\n")], 1)
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _vm._v("\n        config\n    ")
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52027,6 +52061,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -52044,7 +52080,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("navi"), _vm._v("\n    rank\n")], 1)
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_vm._v("\n        rank\n    ")])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

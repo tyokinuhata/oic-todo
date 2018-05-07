@@ -1,7 +1,9 @@
 <template>
     <div>
         <navi></navi>
-        task
+        <div class="container">
+            task
+        </div>
     </div>
 </template>
 

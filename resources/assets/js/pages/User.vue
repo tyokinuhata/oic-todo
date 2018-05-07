@@ -1,7 +1,9 @@
 <template>
     <div>
         <navi></navi>
-        user
+        <div class="container">
+            user
+        </div>
     </div>
 </template>
 
