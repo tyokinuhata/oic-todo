@@ -38,7 +38,8 @@
                     password_confirm: this.confirmPassword
                 })
                     .then(response => {
-                        console.log(response.data)
+                        // ここでトークンを保存, リダイレクト
+                        document.cookie = 'token="' + response.data + '"'
                     })
                     .catch(error => {
                         console.log(error.response)
