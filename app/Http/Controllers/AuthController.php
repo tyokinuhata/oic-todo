@@ -24,15 +24,17 @@ class AuthController extends Controller {
         $exist = User::where('user_id', $request->user_id)->first();
         if ($exist) return response('Authorized', 401);
 
+        // トークンの生成
+        $token = password_hash(strval(time()) . $request->user_id . $request->password, PASSWORD_DEFAULT);
+
         // 登録処理
         DB::table('users')->insert([
             'user_id' => $request->user_id,
-            'password' => password_hash($request->password, PASSWORD_DEFAULT)
+            'password' => password_hash($request->password, PASSWORD_DEFAULT),
+            'token' => $token
         ]);
 
-        $token = password_hash(strval(time()) + $request->user_id + $request->password, PASSWORD_DEFAULT);
-        User::where('user_id', $request->user_id)->where('password', password_hash($request->password, PASSWORD_DEFAULT))->update([ 'token' => $token ]);
-        return response('OK', 200);
+        return response($token, 200);
     }
 
     /**
