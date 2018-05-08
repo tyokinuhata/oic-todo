@@ -25,12 +25,12 @@ class AuthController extends Controller {
         if ($exist) return response('Authorized', 401);
 
         // トークンの生成
-        $token = password_hash(strval(time()) . $request->user_id . $request->password, PASSWORD_DEFAULT);
+        $token = Hash::make(strval(time()) . $request->user_id . $request->password);
 
         // 登録処理
         DB::table('users')->insert([
             'user_id' => $request->user_id,
-            'password' => password_hash($request->password, PASSWORD_DEFAULT),
+            'password' => bcrypt($request->password),
             'token' => $token
         ]);
 
@@ -44,10 +44,10 @@ class AuthController extends Controller {
      */
     public function token (Request $request) {
         // 入力されたユーザIDとパスワードが正しいかどうか
-        $exist = User::where('user_id', $request->user_id)->where('password', $request->password)->first();
-        if ($exist) {
-            $token = password_hash(strval(time()) + $request->user_id + $request->password, PASSWORD_DEFAULT);
-            User::where('user_id', $request->user_id)->where('password', password_hash($request->password, PASSWORD_DEFAULT))->update([ 'token' => $token ]);
+        $user = User::where('user_id', $request->user_id)->first();
+        if (Hash::check($request->password, $user->password) && $request->user_id === $user->user_id) {
+            $token = Hash::make(strval(time()) . $request->user_id . $request->password);
+            User::where('user_id', $request->user_id)->update([ 'token' => $token ]);
             return response($token, 200);
         } else {
             return response('Authorized', 401);

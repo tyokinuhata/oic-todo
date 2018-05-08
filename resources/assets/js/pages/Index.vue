@@ -11,6 +11,7 @@
                 <label for="password">パスワード</label>
                 <input type="password" id="password" class="form-control" v-model="password">
             </div>
+            <button type="button" class="btn btn-primary" @click="signIn()">サインイン</button>
             <router-link to="/signup">サインアップはこちら</router-link>
         </div>
     </div>
@@ -24,5 +25,20 @@
                 password: ''
             }
         },
+        methods: {
+            signIn () {
+                axios.post('/api/auth/token', {
+                    user_id: this.userId,
+                    password: this.password
+                })
+                    .then(response => {
+                        document.cookie = 'token=' + response.data
+                        this.$router.push({ path: '/task' })
+                    })
+                    .catch(error => {
+                        console.log(error.response)
+                    })
+            }
+        }
     }
 </script>
