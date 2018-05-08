@@ -39,6 +39,11 @@
                 document.cookie = 'token=; max-age=0'
                 this.$router.push({ path: '/' })
             }
+        },
+        created() {
+            if (document.cookie.indexOf('token') === -1) {
+                this.$router.push({ path: '/' })
+            }
         }
     }
 </script>

@@ -51617,6 +51617,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             document.cookie = 'token=; max-age=0';
             this.$router.push({ path: '/' });
         }
+    },
+    created: function created() {
+        if (document.cookie.indexOf('token') === -1) {
+            this.$router.push({ path: '/' });
+        }
     }
 });
 
