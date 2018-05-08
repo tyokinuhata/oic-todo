@@ -21,6 +21,9 @@
                         <router-link class="nav-link" to="/user/:id">マイページ</router-link>
                     </li>
                     <li>
+                        <div class="nav-link" @click="signOut()">サインアウト</div>
+                    </li>
+                    <li>
                         <router-link class="nav-link" to="/config">設定</router-link>
                     </li>
                 </ul>
@@ -28,3 +31,20 @@
         </div>
     </nav>
 </template>
+
+<script>
+    export default {
+        methods: {
+            signOut () {
+                document.cookie = 'token=; max-age=0'
+                this.$router.push({ path: '/' })
+            }
+        }
+    }
+</script>
+
+<style lang="scss" scoped="">
+    .nav-link {
+        cursor: pointer;
+    }
+</style>
