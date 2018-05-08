@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('user_id')->unique();
             $table->string('password');
             $table->string('token')->nullable();
+            $table->integer('total_score')->default(0)->comment('獲得スコア合計');
             $table->rememberToken();
             $table->timestamps();
         });
