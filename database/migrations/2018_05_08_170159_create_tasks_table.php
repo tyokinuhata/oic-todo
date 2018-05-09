@@ -20,6 +20,7 @@ class CreateTasksTable extends Migration
             $table->text('description')->nullable()->comment('タスクの説明');
             $table->string('state')->default('incomplete')->comment('タスクの状態');
             $table->integer('score')->default(0)->comment('タスク完了時の獲得スコア');
+            $table->string('user_id');
             $table->timestamps();
         });
     }
