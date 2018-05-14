@@ -17,6 +17,7 @@
         "cross-env": "^5.1",
         "eslint": "^4.19.1",
         "eslint-plugin-vue": "^4.5.0",
+        "ghooks": "^2.0.4",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
@@ -26,5 +27,10 @@
     "dependencies": {
         "vue-router": "^3.0.1",
         "vuex": "^3.0.1"
+    },
+    "config": {
+        "ghooks": {
+            "pre-commit": "npm run fix"
+        }
     }
 }
