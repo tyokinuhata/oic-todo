@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
-        task-old-edit
-    </div>
+  <div class="container">
+    task-old-edit
+  </div>
 </template>

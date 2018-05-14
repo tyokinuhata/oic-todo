@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
-        task-edit
-    </div>
+  <div class="container">
+    task-edit
+  </div>
 </template>
