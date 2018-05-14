@@ -44,7 +44,7 @@ export default {
           password: this.password
         })
         .then(response => {
-          document.cookie = "token=" + response.data;
+          document.cookie = "token=" + response.data + "; max-age=3600";
           this.$router.push({ path: "/task" });
         })
         .catch(error => {

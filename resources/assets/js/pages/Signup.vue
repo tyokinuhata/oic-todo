@@ -54,7 +54,7 @@ export default {
           password_confirm: this.confirmPassword
         })
         .then(response => {
-          document.cookie = "token=" + response.data;
+          document.cookie = "token=" + response.data + "; max-age=3600";
           this.$router.push({ path: "/task" });
         })
         .catch(error => {

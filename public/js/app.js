@@ -50118,7 +50118,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         user_id: this.userId,
         password: this.password
       }).then(function (response) {
-        document.cookie = "token=" + response.data;
+        document.cookie = "token=" + response.data + "; max-age=3600";
         _this.$router.push({ path: "/task" });
       }).catch(function (error) {
         console.log(error.response);
@@ -50337,7 +50337,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         password: this.password,
         password_confirm: this.confirmPassword
       }).then(function (response) {
-        document.cookie = "token=" + response.data;
+        document.cookie = "token=" + response.data + "; max-age=3600";
         _this.$router.push({ path: "/task" });
       }).catch(function (error) {
         console.log(error.response);
