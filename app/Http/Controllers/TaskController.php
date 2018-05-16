@@ -35,20 +35,47 @@ class TaskController extends Controller {
      * タスク一覧を取得する.
      */
     public function list (Request $request) {
+        // トークンに対応するユーザIDの取得
+        $user_id = User::select('user_id')->where('token', $request->token)->first();
+        if (!isset($user_id)) return response('Not Found', 404);
 
+        // タスクの取得
+        $tasks = DB::select('tasks')->where('user_id', $user_id)->get();
+
+        return response($tasks, '200');
     }
 
     /**
      * タスクを更新する.
      */
     public function update (Request $request) {
+        // トークンに対応するユーザIDの取得
+        $user_id = User::select('user_id')->where('token', $request->token)->first();
+        if (!isset($user_id)) return response('Not Found', 404);
 
+        // 更新処理
+        Task::where('task_id', $request->task_id)->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'state' => $request->state,
+            'score' => $request->score,
+        ]);
+
+        return response('OK', 200);
     }
 
     /**
      * タスクを削除する.
      */
     public function delete (Request $request) {
+        // トークンに対応するユーザIDの取得
+        $user_id = User::select('user_id')->where('token', $request->token)->first();
+        if (!isset($user_id)) return response('Not Found', 404);
 
+        // 削除処理
+        $task = Task::where('task_id', $request->task_id)->first();
+        $task->delete();
+
+        return response('OK', 200);
     }
 }
