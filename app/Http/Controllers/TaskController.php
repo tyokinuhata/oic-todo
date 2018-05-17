@@ -9,14 +9,18 @@ use App\User;
  * タスク管理に関するコントローラ.
  * タスクの追加, 一覧, 更新, 削除などを行う.
  */
-class TaskController extends Controller {
+class TaskController extends Controller
+{
     /**
      * タスクを追加する.
      */
-    public function add (Request $request) {
+    public function add(Request $request)
+    {
         // トークンに対応するユーザIDの取得
         $user_id = User::select('user_id')->where('token', $request->token)->first();
-        if (!isset($user_id)) return response('Not Found', 404);
+        if (!isset($user_id)) {
+            return response('Not Found', 404);
+        }
 
         // 登録処理
         DB::table('tasks')->insert([
@@ -34,10 +38,13 @@ class TaskController extends Controller {
     /**
      * タスク一覧を取得する.
      */
-    public function list (Request $request) {
+    public function list(Request $request)
+    {
         // トークンに対応するユーザIDの取得
         $user_id = User::select('user_id')->where('token', $request->token)->first();
-        if (!isset($user_id)) return response('Not Found', 404);
+        if (!isset($user_id)) {
+            return response('Not Found', 404);
+        }
 
         // タスクの取得
         $tasks = DB::select('tasks')->where('user_id', $user_id)->get();
@@ -48,10 +55,13 @@ class TaskController extends Controller {
     /**
      * タスクを更新する.
      */
-    public function update (Request $request) {
+    public function update(Request $request)
+    {
         // トークンに対応するユーザIDの取得
         $user_id = User::select('user_id')->where('token', $request->token)->first();
-        if (!isset($user_id)) return response('Not Found', 404);
+        if (!isset($user_id)) {
+            return response('Not Found', 404);
+        }
 
         // 更新処理
         Task::where('task_id', $request->task_id)->update([
@@ -67,10 +77,13 @@ class TaskController extends Controller {
     /**
      * タスクを削除する.
      */
-    public function delete (Request $request) {
+    public function delete(Request $request)
+    {
         // トークンに対応するユーザIDの取得
         $user_id = User::select('user_id')->where('token', $request->token)->first();
-        if (!isset($user_id)) return response('Not Found', 404);
+        if (!isset($user_id)) {
+            return response('Not Found', 404);
+        }
 
         // 削除処理
         $task = Task::where('task_id', $request->task_id)->first();

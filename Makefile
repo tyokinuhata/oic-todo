@@ -9,3 +9,8 @@ install:
 up:
 	vagrant up
 	vagrant ssh
+
+fix:
+	./node_modules/.bin/eslint --fix resources/assets/js/**/*.vue
+	php ./vendor/bin/php-cs-fixer fix ./app
+	php ./vendor/bin/php-cs-fixer fix ./database
