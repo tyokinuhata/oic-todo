@@ -50071,6 +50071,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Index_Before__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Index_Before___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Index_Before__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Index_After__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Index_After___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Index_After__);
 //
 //
 //
@@ -50082,47 +50086,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Before: __WEBPACK_IMPORTED_MODULE_0__components_Index_Before___default.a,
+    After: __WEBPACK_IMPORTED_MODULE_1__components_Index_After___default.a
+  },
   data: function data() {
     return {
-      userId: "",
-      password: ""
+      signedIn: false
     };
   },
-
-  methods: {
-    signIn: function signIn() {
-      var _this = this;
-
-      axios.post("/api/auth/token", {
-        user_id: this.userId,
-        password: this.password
-      }).then(function (response) {
-        document.cookie = "token=" + response.data + "; max-age=3600";
-        _this.$router.push({ path: "/task" });
-      }).catch(function (error) {
-        console.log(error.response);
-      });
+  created: function created() {
+    if (document.cookie.indexOf("token") === 0) {
+      this.signedIn = true;
     }
   }
 });
@@ -50135,86 +50115,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("todoom")]),
-    _vm._v(" "),
-    _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _c("div", [
-          _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.userId,
-                expression: "userId"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { id: "user-id", type: "text" },
-            domProps: { value: _vm.userId },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.userId = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("label", { attrs: { for: "password" } }, [_vm._v("パスワード")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.password,
-                expression: "password"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { id: "password", type: "password" },
-            domProps: { value: _vm.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.password = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                _vm.signIn()
-              }
-            }
-          },
-          [_vm._v("サインイン")]
-        ),
-        _vm._v(" "),
-        _c("router-link", { attrs: { to: "/signup" } }, [
-          _vm._v("サインアップはこちら")
-        ])
-      ],
-      1
-    )
+  return _c("div", [
+    _vm.signedIn ? _c("div", [_c("after")], 1) : _c("div", [_c("before")], 1)
   ])
 }
 var staticRenderFns = []
@@ -51694,6 +51596,331 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(82)
+/* template */
+var __vue_template__ = __webpack_require__(80)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Index/Before.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-025ea733", Component.options)
+  } else {
+    hotAPI.reload("data-v-025ea733", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", [
+        _c("h1", [_vm._v("todoom")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
+            _c("div", [
+              _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.userId,
+                    expression: "form.userId"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { id: "user-id", type: "text" },
+                domProps: { value: _vm.form.userId },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "userId", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("label", { attrs: { for: "password" } }, [
+                _vm._v("パスワード")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.password,
+                    expression: "form.password"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { id: "password", type: "password" },
+                domProps: { value: _vm.form.password },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "password", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.signIn()
+                  }
+                }
+              },
+              [_vm._v("サインイン")]
+            ),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/signup" } }, [
+              _vm._v("サインアップはこちら")
+            ])
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-025ea733", module.exports)
+  }
+}
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(83)
+/* template */
+var __vue_template__ = __webpack_require__(84)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Index/After.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-01f5da58", Component.options)
+  } else {
+    hotAPI.reload("data-v-01f5da58", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      form: {
+        userId: "",
+        password: ""
+      }
+    };
+  },
+
+  methods: {
+    signIn: function signIn() {
+      var _this = this;
+
+      axios.post("/api/auth/token", {
+        user_id: this.form.userId,
+        password: this.form.password
+      }).then(function (response) {
+        document.cookie = "token=" + response.data + "; max-age=3600";
+        _this.$router.push({ path: "/task" });
+      }).catch(function (error) {
+        console.log(error.response);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Navi__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Navi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Navi__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Navi: __WEBPACK_IMPORTED_MODULE_0__Navi___default.a
+  }
+});
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_vm._v("\n    ログイン後\n  ")])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-01f5da58", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
