@@ -1,4 +1,4 @@
-install:
+setup:
 	composer install
 	npm install
 	cp .env.example .env
@@ -6,7 +6,7 @@ install:
 	php vendor/bin/homestead make
 	touch ./database/database.sqlite
 
-up:
+vup:
 	vagrant up
 	vagrant ssh
 
