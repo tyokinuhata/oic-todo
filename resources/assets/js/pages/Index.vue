@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Before from "../components/Index/Before";
-import After from "../components/Index/After";
+import Before from "./Index/Before";
+import After from "./Index/After";
 
 export default {
   components: {
