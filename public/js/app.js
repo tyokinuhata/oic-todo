@@ -51124,7 +51124,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "btn btn-success",
-                        attrs: { to: "/edit" }
+                        attrs: { to: "/task/edit" }
                       },
                       [_vm._v("編集")]
                     )
@@ -51221,7 +51221,7 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(91)
 /* template */
 var __vue_template__ = __webpack_require__(61)
 /* template functional */
@@ -51269,7 +51269,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [_vm._v("\n  task-edit\n")])
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "text", placeholder: "タイトル" }
+        }),
+        _vm._v(" "),
+        _c("textarea", { staticClass: "form-control" }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: { click: _vm.save }
+          },
+          [_vm._v("保存")]
+        )
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52136,6 +52161,39 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7fc9d692", module.exports)
   }
 }
+
+/***/ }),
+/* 91 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Navi__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a
+  },
+  methods: {
+    save: function save() {
+      this.$router.push({ path: "/task" });
+    }
+  }
+});
 
 /***/ })
 /******/ ]);

@@ -26,7 +26,7 @@
                 <button type="button" class="btn btn-primary">完了</button>
               </td>
               <td>
-                <router-link to="/edit" class="btn btn-success">編集</router-link>
+                <router-link to="/task/edit" class="btn btn-success">編集</router-link>
               </td>
               <td>
                 <button type="button" class="btn btn-danger">削除</button>
