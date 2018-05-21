@@ -11,11 +11,11 @@
         <table class="table">
           <thead>
             <tr>
-              <td>タイトル</td>
-              <td>説明</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <th>タイトル</th>
+              <th>説明</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
@@ -26,7 +26,7 @@
                 <button type="button" class="btn btn-primary">完了</button>
               </td>
               <td>
-                <button type="button" class="btn btn-success">編集</button>
+                <router-link to="/edit" class="btn btn-success">編集</router-link>
               </td>
               <td>
                 <button type="button" class="btn btn-danger">削除</button>
