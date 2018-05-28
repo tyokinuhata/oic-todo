@@ -4,31 +4,34 @@
       <div>
         <h1>todoom</h1>
         <p>todoomはポイントで競い合う新感覚TODOアプリです。</p>
-        <div>
-          <div>
-            <label for="user-id">ユーザID</label>
-            <input
-              id="user-id"
-              v-model="form.userId"
-              @keyup.enter="signIn()"
-              type="text"
-              class="form-control"
-              autofocus>
+        <div class="card">
+          <div class="card-header">サインイン</div>
+          <div class="card-body">
+            <div>
+              <label for="user-id">ユーザID</label>
+              <input
+                      id="user-id"
+                      v-model="form.userId"
+                      @keyup.enter="signIn()"
+                      type="text"
+                      class="form-control"
+                      autofocus>
+            </div>
+            <div>
+              <label for="password">パスワード</label>
+              <input
+                      id="password"
+                      v-model="form.password"
+                      @keyup.enter="signIn()"
+                      type="password"
+                      class="form-control">
+            </div>
+            <button
+                    type="button"
+                    class="btn btn-primary"
+                    @click="signIn()">サインイン</button>
+            <router-link to="/signup">サインアップはこちら</router-link>
           </div>
-          <div>
-            <label for="password">パスワード</label>
-            <input
-              id="password"
-              v-model="form.password"
-              @keyup.enter="signIn()"
-              type="password"
-              class="form-control">
-          </div>
-          <button
-            type="button"
-            class="btn btn-primary"
-            @click="signIn()">サインイン</button>
-          <router-link to="/signup">サインアップはこちら</router-link>
         </div>
       </div>
     </div>
