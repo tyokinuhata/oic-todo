@@ -51426,9 +51426,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         token: this.token,
         title: this.add.title,
         description: this.add.description
-      }).then(function (response) {
-        console.log(response);
-      });
+      }).then(function (response) {});
+    },
+    deleteTask: function deleteTask(taskId) {
+      axios.post('/api/task/delete', {
+        token: this.token,
+        task_id: taskId
+      }).then(function (response) {});
     },
     getToken: function getToken() {
       var cookie = document.cookie.replace(/\s+/g, '').split(';');
@@ -51477,7 +51481,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         for (var _iterator2 = response.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           var d = _step2.value;
 
-          console.log(d);
           _this.lists.push(d);
         }
       } catch (err) {
@@ -51600,7 +51603,21 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _vm._m(2, true)
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            _vm.deleteTask(l.task_id)
+                          }
+                        }
+                      },
+                      [_vm._v("削除")]
+                    )
+                  ])
                 ])
               })
             )
@@ -51639,18 +51656,6 @@ var staticRenderFns = [
         "button",
         { staticClass: "btn btn-primary", attrs: { type: "button" } },
         [_vm._v("完了")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c(
-        "button",
-        { staticClass: "btn btn-danger", attrs: { type: "button" } },
-        [_vm._v("削除")]
       )
     ])
   }

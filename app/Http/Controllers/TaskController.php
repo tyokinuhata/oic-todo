@@ -82,7 +82,7 @@ class TaskController extends Controller
     public function delete(Request $request)
     {
         // トークンに対応するユーザIDの取得
-        $user_id = User::select('user_id')->where('token', $request->token)->first();
+        $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
         if (!isset($user_id)) {
             return response('Not Found', 404);
         }
