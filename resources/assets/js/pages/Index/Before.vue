@@ -10,14 +10,17 @@
             <input
               id="user-id"
               v-model="form.userId"
+              @keyup.enter="signIn()"
               type="text"
-              class="form-control">
+              class="form-control"
+              autofocus>
           </div>
           <div>
             <label for="password">パスワード</label>
             <input
               id="password"
               v-model="form.password"
+              @keyup.enter="signIn()"
               type="password"
               class="form-control">
           </div>

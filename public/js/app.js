@@ -50194,6 +50194,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -50253,9 +50256,18 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { id: "user-id", type: "text" },
+                attrs: { id: "user-id", type: "text", autofocus: "" },
                 domProps: { value: _vm.form.userId },
                 on: {
+                  keyup: function($event) {
+                    if (
+                      !("button" in $event) &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    _vm.signIn()
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
@@ -50284,6 +50296,15 @@ var render = function() {
                 attrs: { id: "password", type: "password" },
                 domProps: { value: _vm.form.password },
                 on: {
+                  keyup: function($event) {
+                    if (
+                      !("button" in $event) &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    _vm.signIn()
+                  },
                   input: function($event) {
                     if ($event.target.composing) {
                       return
