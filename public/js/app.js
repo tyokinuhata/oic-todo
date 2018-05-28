@@ -51520,7 +51520,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     this.getToken();
 
-    axios.post('/api/task/list', {
+    axios.post('/api/task/list/incomplete', {
       token: this.token
     }).then(function (response) {
       var _iteratorNormalCompletion2 = true;

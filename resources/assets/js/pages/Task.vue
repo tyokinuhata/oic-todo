@@ -94,7 +94,7 @@ export default {
   created() {
     this.getToken()
 
-    axios.post('/api/task/list', {
+    axios.post('/api/task/list/incomplete', {
       token: this.token
     })
     .then(response => {

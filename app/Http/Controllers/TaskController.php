@@ -40,7 +40,7 @@ class TaskController extends Controller
     /**
      * タスク一覧を取得する.
      */
-    public function list(Request $request)
+    public function incomplete(Request $request)
     {
         // トークンに対応するユーザIDの取得
         $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
@@ -49,7 +49,21 @@ class TaskController extends Controller
         }
 
         // タスクの取得
-        $tasks = Task::where('user_id', $user_id)->get();
+        $tasks = Task::where('user_id', $user_id)->where('completed', false)->get();
+
+        return response($tasks, '200');
+    }
+
+    public function complete(Request $request)
+    {
+        // トークンに対応するユーザIDの取得
+        $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
+        if (!isset($user_id)) {
+            return response('Not Found', 404);
+        }
+
+        // タスクの取得
+        $tasks = Task::where('user_id', $user_id)->where('completed', true)->get();
 
         return response($tasks, '200');
     }

@@ -27,7 +27,8 @@ Route::prefix('auth')->group(function () {
 // タスク系API
 Route::prefix('task')->group(function () {
     Route::post('/add', 'TaskController@add');
-    Route::post('/list', 'TaskController@list');
+    Route::post('/list/incomplete', 'TaskController@incomplete');
+    Route::post('/list/complete', 'TaskController@complete');
     Route::post('/update', 'TaskController@update');
     Route::post('/delete', 'TaskController@delete');
 });
