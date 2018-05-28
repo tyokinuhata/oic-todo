@@ -20,5 +20,5 @@ $ make setup
 ```bash
 $ make vup
 $ npm run watch
-$ open http://{your_private_ip_address}:8000
+$ open http://{your_private_ip_address}:8000  // or open localhost:8000
 ```
