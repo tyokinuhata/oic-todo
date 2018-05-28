@@ -3,9 +3,9 @@
     <navi/>
     <div class="container">
       <div>
-        <input type="text" class="form-control" placeholder="タイトル">
-        <textarea class="form-control"></textarea>
-        <button type="button" class="btn btn-primary">追加</button>
+        <input type="text" class="form-control" placeholder="タイトル" v-model="task.title">
+        <textarea class="form-control" v-model="task.description"></textarea>
+        <button type="button" class="btn btn-primary" @click="addTask()">追加</button>
       </div>
       <div>
         <table class="table">
@@ -45,6 +45,33 @@ import Navi from "../components/Navi";
 export default {
   components: {
     Navi
+  },
+  data () {
+    return {
+      task: {
+        title: '',
+        description: ''
+      }
+    }
+  },
+  methods: {
+    addTask() {
+      const cookie = document.cookie.replace(/\s+/g, '').split(';')
+      let token
+      for (let c of cookie) {
+        if (c.indexOf('token') >= 0) {
+          token = c.slice(6)
+        }
+      }
+      axios.post('/api/task/add', {
+        token: token,
+        title: this.task.title,
+        description: this.task.description
+      })
+      .then(response => {
+        console.log(response)
+      })
+    }
   }
 };
 </script>

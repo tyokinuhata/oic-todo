@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use DB;
 
 /**
  * タスク管理に関するコントローラ.
@@ -17,7 +18,7 @@ class TaskController extends Controller
     public function add(Request $request)
     {
         // トークンに対応するユーザIDの取得
-        $user_id = User::select('user_id')->where('token', $request->token)->first();
+        $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
         if (!isset($user_id)) {
             return response('Not Found', 404);
         }
@@ -25,7 +26,7 @@ class TaskController extends Controller
         // 登録処理
         DB::table('tasks')->insert([
             'task_id' => uniqid(),
-            'name' => $request->name,
+            'title' => $request->title,
             'description' => $request->description,
             'state' => 'incomplete',
             'score' => 0,
@@ -65,7 +66,7 @@ class TaskController extends Controller
 
         // 更新処理
         Task::where('task_id', $request->task_id)->update([
-            'name' => $request->name,
+            'title' => $request->name,
             'description' => $request->description,
             'state' => $request->state,
             'score' => $request->score,
