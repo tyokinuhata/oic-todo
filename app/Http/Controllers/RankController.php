@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\User;
 
 /**
  * ランキングに関するコントローラ.
@@ -15,6 +15,6 @@ class RankController extends Controller
      * 全ユーザ中の上位10位までのスコアを返す.
      */
     public function list() {
-        DB::table('users')->orderBy('total_score', 'desc')->take(10)->get();
+        return User::orderBy('total_score', 'desc')->take(100)->get();
     }
 }

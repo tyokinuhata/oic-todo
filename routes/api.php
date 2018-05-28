@@ -34,5 +34,5 @@ Route::prefix('task')->group(function () {
 
 // ランキング系API
 Route::prefix('rank')->group(function () {
-    Route::get('/list');
+    Route::get('/list', 'RankController@list');
 });

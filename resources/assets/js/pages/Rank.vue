@@ -2,7 +2,7 @@
   <div>
     <navi/>
     <div class="container">
-      <h1>ランキング</h1>
+      <h1>TOP100ランキング</h1>
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -12,27 +12,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>hoge</td>
-            <td>114514</td>
-          </tr>
-        </tbody>
-      </table>
-      <h1>自分のランク</h1>
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th>#</th>
-            <th>ユーザ名</th>
-            <th>スコア</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>hoge</td>
-            <td>114514</td>
+          <tr v-for="user, i in users">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.user_id }}</td>
+            <td>{{ user.total_score }}</td>
           </tr>
         </tbody>
       </table>
@@ -46,6 +29,24 @@ import Navi from "../components/Navi";
 export default {
   components: {
     Navi
+  },
+  data() {
+    return {
+      users: []
+    }
+  },
+  methods: {
+    listRank() {
+      axios.get('/api/rank/list')
+        .then(response => {
+          for (let d of response.data) {
+            this.users.push(d)
+          }
+        });
+    }
+  },
+  created() {
+    this.listRank();
   }
 };
 </script>

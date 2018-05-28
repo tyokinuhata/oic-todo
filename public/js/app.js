@@ -52382,29 +52382,53 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a
+  },
+  data: function data() {
+    return {
+      users: []
+    };
+  },
+
+  methods: {
+    listRank: function listRank() {
+      var _this = this;
+
+      axios.get('/api/rank/list').then(function (response) {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = response.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var d = _step.value;
+
+            _this.users.push(d);
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      });
+    }
+  },
+  created: function created() {
+    this.listRank();
   }
 });
 
@@ -52416,60 +52440,47 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("navi"), _vm._v(" "), _vm._m(0)], 1)
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("h1", [_vm._v("TOP100ランキング")]),
+        _vm._v(" "),
+        _c("table", { staticClass: "table" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.users, function(user, i) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(i + 1))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(user.user_id))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(user.total_score))])
+              ])
+            })
+          )
+        ])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("ランキング")]),
-      _vm._v(" "),
-      _c("table", { staticClass: "table" }, [
-        _c("thead", { staticClass: "thead-dark" }, [
-          _c("tr", [
-            _c("th", [_vm._v("#")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("ユーザ名")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("スコア")])
-          ])
-        ]),
+    return _c("thead", { staticClass: "thead-dark" }, [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("1")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("hoge")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("114514")])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("h1", [_vm._v("自分のランク")]),
-      _vm._v(" "),
-      _c("table", { staticClass: "table" }, [
-        _c("thead", { staticClass: "thead-dark" }, [
-          _c("tr", [
-            _c("th", [_vm._v("#")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("ユーザ名")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("スコア")])
-          ])
-        ]),
+        _c("th", [_vm._v("ユーザ名")]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("1")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("hoge")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("114514")])
-          ])
-        ])
+        _c("th", [_vm._v("スコア")])
       ])
     ])
   }
