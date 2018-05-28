@@ -51361,6 +51361,8 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Navi__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TaskEdit__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TaskEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__TaskEdit__);
 //
 //
 //
@@ -51402,12 +51404,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a
+    Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a,
+    TaskEdit: __WEBPACK_IMPORTED_MODULE_1__TaskEdit___default.a
   },
   data: function data() {
     return {
@@ -51416,7 +51421,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         title: '',
         description: ''
       },
-      lists: []
+      lists: [],
+      update: {
+        taskId: ''
+      }
     };
   },
 
@@ -51427,6 +51435,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         title: this.add.title,
         description: this.add.description
       }).then(function (response) {});
+    },
+    updateTask: function updateTask(taskId) {
+      this.update.taskId = taskId;
     },
     deleteTask: function deleteTask(taskId) {
       axios.post('/api/task/delete', {
@@ -51548,6 +51559,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
+            attrs: { placeholder: "説明" },
             domProps: { value: _vm.add.description },
             on: {
               input: function($event) {
@@ -51588,20 +51600,25 @@ var render = function() {
                   _vm._v(" "),
                   _vm._m(1, true),
                   _vm._v(" "),
-                  _c(
-                    "td",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "btn btn-success",
-                          attrs: { to: "/task/edit" }
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: {
+                          type: "button",
+                          "data-toggle": "modal",
+                          "data-target": "#updateTaskModal"
                         },
-                        [_vm._v("編集")]
-                      )
-                    ],
-                    1
-                  ),
+                        on: {
+                          click: function($event) {
+                            _vm.updateTask(l.task_id)
+                          }
+                        }
+                      },
+                      [_vm._v("編集")]
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("td", [
                     _c(
@@ -51623,7 +51640,9 @@ var render = function() {
             )
           ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c("task-edit", { attrs: { taskId: _vm.update.taskId } })
     ],
     1
   )
@@ -51722,8 +51741,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Navi__);
 //
 //
 //
@@ -51735,17 +51752,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a
+  props: ['taskId'],
+  data: function data() {
+    return {
+      token: '',
+      title: '',
+      description: ''
+    };
   },
+
   methods: {
-    save: function save() {
-      this.$router.push({ path: "/task" });
+    updateTask: function updateTask() {
+      axios.post('/api/task/update', {
+        token: this.token,
+        task_id: this.taskId,
+        title: this.title,
+        description: this.description
+      });
+    },
+    getToken: function getToken() {
+      var cookie = document.cookie.replace(/\s+/g, '').split(';');
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = cookie[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var c = _step.value;
+
+          if (c.indexOf('token') >= 0) {
+            this.token = c.slice(6);
+            break;
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
     }
+  },
+  created: function created() {
+    this.getToken();
   }
 });
 
@@ -51759,32 +51830,110 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "modal fade", attrs: { id: "updateTaskModal" } },
     [
-      _c("navi"),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", placeholder: "タイトル" }
-        }),
-        _vm._v(" "),
-        _c("textarea", { staticClass: "form-control" }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            attrs: { type: "button" },
-            on: { click: _vm.save }
-          },
-          [_vm._v("保存")]
-        )
+      _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-body" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.title,
+                  expression: "title"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "タイトル" },
+              domProps: { value: _vm.title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.title = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.description,
+                  expression: "description"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { placeholder: "説明" },
+              domProps: { value: _vm.description },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.description = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-footer" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-secondary",
+                attrs: { type: "button", "data-dismiss": "modal" }
+              },
+              [_vm._v("キャンセル")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "button", "data-dismiss": "modal" },
+                on: {
+                  click: function($event) {
+                    _vm.updateTask()
+                  }
+                }
+              },
+              [_vm._v("保存")]
+            )
+          ])
+        ])
       ])
-    ],
-    1
+    ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h2", { staticClass: "modal-title" }, [_vm._v("タスク内容の編集")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

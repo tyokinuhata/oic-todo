@@ -4,7 +4,7 @@
     <div class="container">
       <div>
         <input type="text" class="form-control" placeholder="タイトル" v-model="add.title">
-        <textarea class="form-control" v-model="add.description"></textarea>
+        <textarea class="form-control" placeholder="説明" v-model="add.description"></textarea>
         <button type="button" class="btn btn-primary" @click="addTask()">追加</button>
       </div>
       <div>
@@ -26,7 +26,7 @@
                 <button type="button" class="btn btn-primary">完了</button>
               </td>
               <td>
-                <router-link to="/task/edit" class="btn btn-success">編集</router-link>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTaskModal" @click="updateTask(l.task_id)">編集</button>
               </td>
               <td>
                 <button type="button" class="btn btn-danger" @click="deleteTask(l.task_id)">削除</button>
@@ -36,15 +36,18 @@
         </table>
       </div>
     </div>
+    <task-edit :taskId="update.taskId"></task-edit>
   </div>
 </template>
 
 <script>
 import Navi from "../components/Navi";
+import TaskEdit from "./TaskEdit";
 
 export default {
   components: {
-    Navi
+    Navi,
+    TaskEdit
   },
   data () {
     return {
@@ -53,7 +56,10 @@ export default {
         title: '',
         description: ''
       },
-      lists: []
+      lists: [],
+      update: {
+        taskId: ''
+      }
     }
   },
   methods: {
@@ -64,6 +70,9 @@ export default {
         description: this.add.description
       })
       .then(response => {})
+    },
+    updateTask(taskId) {
+      this.update.taskId = taskId
     },
     deleteTask(taskId) {
       axios.post('/api/task/delete', {
