@@ -3,8 +3,8 @@
     <navi/>
     <div class="container">
       <div>
-        <input type="text" class="form-control" placeholder="タイトル" v-model="task.title">
-        <textarea class="form-control" v-model="task.description"></textarea>
+        <input type="text" class="form-control" placeholder="タイトル" v-model="add.title">
+        <textarea class="form-control" v-model="add.description"></textarea>
         <button type="button" class="btn btn-primary" @click="addTask()">追加</button>
       </div>
       <div>
@@ -19,9 +19,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>hoge</td>
-              <td>hogehoge</td>
+            <tr v-for="l in lists">
+              <td>{{ l.title }}</td>
+              <td>{{ l.description }}</td>
               <td>
                 <button type="button" class="btn btn-primary">完了</button>
               </td>
@@ -48,30 +48,47 @@ export default {
   },
   data () {
     return {
-      task: {
+      token: '',
+      add: {
         title: '',
         description: ''
-      }
+      },
+      lists: []
     }
   },
   methods: {
     addTask() {
-      const cookie = document.cookie.replace(/\s+/g, '').split(';')
-      let token
-      for (let c of cookie) {
-        if (c.indexOf('token') >= 0) {
-          token = c.slice(6)
-        }
-      }
       axios.post('/api/task/add', {
-        token: token,
-        title: this.task.title,
-        description: this.task.description
+        token: this.token,
+        title: this.add.title,
+        description: this.add.description
       })
       .then(response => {
         console.log(response)
       })
+    },
+    getToken() {
+      const cookie = document.cookie.replace(/\s+/g, '').split(';')
+      for (let c of cookie) {
+        if (c.indexOf('token') >= 0) {
+          this.token = c.slice(6)
+          break
+        }
+      }
     }
+  },
+  created() {
+    this.getToken()
+
+    axios.post('/api/task/list', {
+      token: this.token
+    })
+    .then(response => {
+      for (let d of response.data) {
+        console.log(d)
+        this.lists.push(d)
+      }
+    })
   }
 };
 </script>

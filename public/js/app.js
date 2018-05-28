@@ -51411,17 +51411,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data: function data() {
     return {
-      task: {
+      token: '',
+      add: {
         title: '',
         description: ''
-      }
+      },
+      lists: []
     };
   },
 
   methods: {
     addTask: function addTask() {
+      axios.post('/api/task/add', {
+        token: this.token,
+        title: this.add.title,
+        description: this.add.description
+      }).then(function (response) {
+        console.log(response);
+      });
+    },
+    getToken: function getToken() {
       var cookie = document.cookie.replace(/\s+/g, '').split(';');
-      var token = void 0;
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
@@ -51431,7 +51441,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           var c = _step.value;
 
           if (c.indexOf('token') >= 0) {
-            token = c.slice(6);
+            this.token = c.slice(6);
+            break;
           }
         }
       } catch (err) {
@@ -51448,15 +51459,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           }
         }
       }
-
-      axios.post('/api/task/add', {
-        token: token,
-        title: this.task.title,
-        description: this.task.description
-      }).then(function (response) {
-        console.log(response);
-      });
     }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.getToken();
+
+    axios.post('/api/task/list', {
+      token: this.token
+    }).then(function (response) {
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = response.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var d = _step2.value;
+
+          console.log(d);
+          _this.lists.push(d);
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2.return) {
+            _iterator2.return();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+    });
   }
 });
 
@@ -51480,19 +51518,19 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.task.title,
-                expression: "task.title"
+                value: _vm.add.title,
+                expression: "add.title"
               }
             ],
             staticClass: "form-control",
             attrs: { type: "text", placeholder: "タイトル" },
-            domProps: { value: _vm.task.title },
+            domProps: { value: _vm.add.title },
             on: {
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.$set(_vm.task, "title", $event.target.value)
+                _vm.$set(_vm.add, "title", $event.target.value)
               }
             }
           }),
@@ -51502,18 +51540,18 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.task.description,
-                expression: "task.description"
+                value: _vm.add.description,
+                expression: "add.description"
               }
             ],
             staticClass: "form-control",
-            domProps: { value: _vm.task.description },
+            domProps: { value: _vm.add.description },
             on: {
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.$set(_vm.task, "description", $event.target.value)
+                _vm.$set(_vm.add, "description", $event.target.value)
               }
             }
           }),
@@ -51537,32 +51575,35 @@ var render = function() {
           _c("table", { staticClass: "table" }, [
             _vm._m(0),
             _vm._v(" "),
-            _c("tbody", [
-              _c("tr", [
-                _c("td", [_vm._v("hoge")]),
-                _vm._v(" "),
-                _c("td", [_vm._v("hogehoge")]),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "btn btn-success",
-                        attrs: { to: "/task/edit" }
-                      },
-                      [_vm._v("編集")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm._m(2)
-              ])
-            ])
+            _c(
+              "tbody",
+              _vm._l(_vm.lists, function(l) {
+                return _c("tr", [
+                  _c("td", [_vm._v(_vm._s(l.title))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(l.description))]),
+                  _vm._v(" "),
+                  _vm._m(1, true),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-success",
+                          attrs: { to: "/task/edit" }
+                        },
+                        [_vm._v("編集")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(2, true)
+                ])
+              })
+            )
           ])
         ])
       ])

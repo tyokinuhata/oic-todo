@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Task;
 use DB;
 
 /**
@@ -42,13 +43,13 @@ class TaskController extends Controller
     public function list(Request $request)
     {
         // トークンに対応するユーザIDの取得
-        $user_id = User::select('user_id')->where('token', $request->token)->first();
+        $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
         if (!isset($user_id)) {
             return response('Not Found', 404);
         }
 
         // タスクの取得
-        $tasks = DB::select('tasks')->where('user_id', $user_id)->get();
+        $tasks = Task::where('user_id', $user_id)->get();
 
         return response($tasks, '200');
     }
