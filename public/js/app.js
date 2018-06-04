@@ -51574,54 +51574,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         task_id: taskId
       }).then(function (response) {});
     },
+    getTask: function getTask() {
+      var _this = this;
+
+      axios.post('/api/task/list/completed', {
+        token: this.token
+      }).then(function (response) {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = response.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var d = _step.value;
+
+            d.completed === '1' ? _this.lists.complete.push(d) : _this.lists.incomplete.push(d);
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      });
+    },
     getToken: function getToken() {
       var cookie = document.cookie.replace(/\s+/g, '').split(';');
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = cookie[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var c = _step.value;
-
-          if (c.indexOf('token') >= 0) {
-            this.token = c.slice(6);
-            break;
-          }
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
-    }
-  },
-  created: function created() {
-    var _this = this;
-
-    this.getToken();
-
-    axios.post('/api/task/list/completed', {
-      token: this.token
-    }).then(function (response) {
       var _iteratorNormalCompletion2 = true;
       var _didIteratorError2 = false;
       var _iteratorError2 = undefined;
 
       try {
-        for (var _iterator2 = response.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var d = _step2.value;
+        for (var _iterator2 = cookie[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var c = _step2.value;
 
-          d.completed === '1' ? _this.lists.complete.push(d) : _this.lists.incomplete.push(d);
+          if (c.indexOf('token') >= 0) {
+            this.token = c.slice(6);
+            break;
+          }
         }
       } catch (err) {
         _didIteratorError2 = true;
@@ -51637,7 +51635,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           }
         }
       }
-    });
+    }
+  },
+  created: function created() {
+    this.getToken();
+    this.getTask();
   }
 });
 

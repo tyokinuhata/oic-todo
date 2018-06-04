@@ -124,6 +124,16 @@ export default {
       })
       .then(response => {})
     },
+    getTask() {
+      axios.post('/api/task/list/completed', {
+        token: this.token
+      })
+      .then(response => {
+        for (let d of response.data) {
+          d.completed === '1' ? this.lists.complete.push(d) : this.lists.incomplete.push(d)
+        }
+      })
+    },
     getToken() {
       const cookie = document.cookie.replace(/\s+/g, '').split(';')
       for (let c of cookie) {
@@ -136,15 +146,7 @@ export default {
   },
   created() {
     this.getToken()
-
-    axios.post('/api/task/list/completed', {
-      token: this.token
-    })
-    .then(response => {
-      for (let d of response.data) {
-        d.completed === '1' ? this.lists.complete.push(d) : this.lists.incomplete.push(d)
-      }
-    })
+    this.getTask()
   }
 };
 </script>
