@@ -27,9 +27,11 @@ Route::prefix('auth')->group(function () {
 // タスク系API
 Route::prefix('task')->group(function () {
     Route::post('/add', 'TaskController@add');
-    Route::post('/list/completed', 'TaskController@completed');
+    Route::post('/list', 'TaskController@completed');
     Route::post('/update', 'TaskController@update');
     Route::post('/delete', 'TaskController@delete');
+    Route::post('/close', 'TaskController@close');
+    Route::post('/reopen', 'TaskController@reopen');
 });
 
 // ランキング系API

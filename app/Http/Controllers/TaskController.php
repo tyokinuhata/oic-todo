@@ -91,4 +91,40 @@ class TaskController extends Controller
 
         return response('OK', 200);
     }
+
+    /**
+     * タスクを完了する.
+     */
+    public function close(Request $request)
+    {
+        // トークンに対応するユーザIDの取得
+        $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
+        if (!isset($user_id)) {
+            return response('Not Found', 404);
+        }
+
+        Task::where('task_id', $request->task_id)->update([
+            'completed' => true
+        ]);
+
+        return response('OK', 200);
+    }
+
+    /**
+     * タスクを再度未完了状態にする
+     */
+    public function reopen(Request $request)
+    {
+        // トークンに対応するユーザIDの取得
+        $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
+        if (!isset($user_id)) {
+            return response('Not Found', 404);
+        }
+
+        Task::where('task_id', $request->task_id)->update([
+            'completed' => false
+        ]);
+
+        return response('OK', 200);
+    }
 }

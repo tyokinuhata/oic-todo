@@ -33,7 +33,7 @@
                   <td>{{ l.title }}</td>
                   <td>{{ l.description }}</td>
                   <td>
-                    <button type="button" class="btn btn-primary">完了</button>
+                    <button type="button" class="btn btn-primary" @click="closeTask(l.task_id)">完了</button>
                   </td>
                   <td>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTaskModal" @click="updateTask(l.task_id)">編集</button>
@@ -61,7 +61,7 @@
                 <td>{{ l.title }}</td>
                 <td>{{ l.description }}</td>
                 <td>
-                  <button type="button" class="btn btn-warning">未完了</button>
+                  <button type="button" class="btn btn-warning" @click="reopenTask(l.task_id)">未完了</button>
                 </td>
                 <td>
                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTaskModal" @click="updateTask(l.task_id)">編集</button>
@@ -124,8 +124,22 @@ export default {
       })
       .then(response => {})
     },
+    closeTask(taskId) {
+      axios.post('/api/task/close', {
+        token: this.token,
+        task_id: taskId
+      })
+      .then(response => {})
+    },
+    reopenTask(taskId) {
+      axios.post('/api/task/reopen', {
+        token: this.token,
+        task_id: taskId
+      })
+      .then(response => {})
+    },
     getTask() {
-      axios.post('/api/task/list/completed', {
+      axios.post('/api/task/list', {
         token: this.token
       })
       .then(response => {

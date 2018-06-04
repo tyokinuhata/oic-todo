@@ -51574,10 +51574,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         task_id: taskId
       }).then(function (response) {});
     },
+    closeTask: function closeTask(taskId) {
+      axios.post('/api/task/close', {
+        token: this.token,
+        task_id: taskId
+      }).then(function (response) {});
+    },
+    reopenTask: function reopenTask(taskId) {
+      axios.post('/api/task/reopen', {
+        token: this.token,
+        task_id: taskId
+      }).then(function (response) {});
+    },
     getTask: function getTask() {
       var _this = this;
 
-      axios.post('/api/task/list/completed', {
+      axios.post('/api/task/list', {
         token: this.token
       }).then(function (response) {
         var _iteratorNormalCompletion = true;
@@ -51944,7 +51956,21 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(l.description))]),
                         _vm._v(" "),
-                        _vm._m(2, true),
+                        _c("td", [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.closeTask(l.task_id)
+                                }
+                              }
+                            },
+                            [_vm._v("完了")]
+                          )
+                        ]),
                         _vm._v(" "),
                         _c("td", [
                           _c(
@@ -51990,7 +52016,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "tab-pane", attrs: { id: "complete" } }, [
               _c("table", { staticClass: "table" }, [
-                _vm._m(3),
+                _vm._m(2),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -52000,7 +52026,21 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(l.description))]),
                       _vm._v(" "),
-                      _vm._m(4, true),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-warning",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.reopenTask(l.task_id)
+                              }
+                            }
+                          },
+                          [_vm._v("未完了")]
+                        )
+                      ]),
                       _vm._v(" "),
                       _c("td", [
                         _c(
@@ -52102,18 +52142,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "button" } },
-        [_vm._v("完了")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", [_vm._v("タイトル")]),
@@ -52126,18 +52154,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v(" ")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c(
-        "button",
-        { staticClass: "btn btn-warning", attrs: { type: "button" } },
-        [_vm._v("未完了")]
-      )
     ])
   }
 ]
