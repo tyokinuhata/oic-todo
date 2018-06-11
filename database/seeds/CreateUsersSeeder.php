@@ -12,6 +12,7 @@ class CreateUsersSeeder extends Seeder
      */
     public function run()
     {
+        User::truncate();
         $faker = Faker\Factory::create('ja_JP');
 
         for ($i = 0; $i < 200; $i++) {
