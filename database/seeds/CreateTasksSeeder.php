@@ -24,7 +24,7 @@ class CreateTasksSeeder extends Seeder
                 'completed' => false,
                 'score' => $faker->numberBetween(0, 500),
                 'user_id' => 'tyokinuhata',
-                'reopen_at' => $this->getRandomDate(2015, 2020)
+                'reopen_at' => $this->getRandomDate(2015)
             ]);
         }
     }
@@ -35,10 +35,10 @@ class CreateTasksSeeder extends Seeder
      * @param $endYear
      * @return false|string
      */
-    protected function getRandomDate($beginYear, $endYear)
+    protected function getRandomDate($beginYear)
     {
         $start = Carbon::create($beginYear, 1, 1, 0, 0, 0);
-        $end = Carbon::create($endYear, 12, 31, 23, 59);
+        $end = Carbon::now();
 
         $min = strtotime($start);
         $max = strtotime($end);
