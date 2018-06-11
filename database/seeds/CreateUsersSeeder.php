@@ -17,7 +17,7 @@ class CreateUsersSeeder extends Seeder
 
         for ($i = 0; $i < 200; $i++) {
             User::create([
-                'user_id' => $faker->userName,
+                'user_id' => $faker->userName . uniqid(),
                 'password' => uniqid(),
                 'token' => uniqid(),
                 'total_score' => $faker->numberBetween(0, 5000)
