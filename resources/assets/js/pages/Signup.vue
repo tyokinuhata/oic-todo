@@ -10,6 +10,7 @@
           <input
                   id="user-id"
                   v-model="userId"
+                  @keyup.enter="signUp()"
                   type="text"
                   class="form-control">
         </div>
@@ -18,6 +19,7 @@
           <input
                   id="password"
                   v-model="password"
+                  @keyup.enter="signUp()"
                   type="password"
                   class="form-control">
         </div>
@@ -32,7 +34,7 @@
         <button
                 type="button"
                 class="btn btn-primary"
-                @click="signup()">サインアップ</button>
+                @click="signUp()">サインアップ</button>
         <router-link to="/">サインインはこちら</router-link>
       </div>
     </div>
@@ -49,7 +51,7 @@ export default {
     };
   },
   methods: {
-    signup() {
+    signUp() {
       axios
         .post("/api/auth/register", {
           user_id: this.userId,

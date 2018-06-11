@@ -51231,6 +51231,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51242,7 +51244,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    signup: function signup() {
+    signUp: function signUp() {
       var _this = this;
 
       axios.post("/api/auth/register", {
@@ -51295,6 +51297,15 @@ var render = function() {
               attrs: { id: "user-id", type: "text" },
               domProps: { value: _vm.userId },
               on: {
+                keyup: function($event) {
+                  if (
+                    !("button" in $event) &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  _vm.signUp()
+                },
                 input: function($event) {
                   if ($event.target.composing) {
                     return
@@ -51321,6 +51332,15 @@ var render = function() {
               attrs: { id: "password", type: "password" },
               domProps: { value: _vm.password },
               on: {
+                keyup: function($event) {
+                  if (
+                    !("button" in $event) &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  _vm.signUp()
+                },
                 input: function($event) {
                   if ($event.target.composing) {
                     return
@@ -51366,7 +51386,7 @@ var render = function() {
               attrs: { type: "button" },
               on: {
                 click: function($event) {
-                  _vm.signup()
+                  _vm.signUp()
                 }
               }
             },
