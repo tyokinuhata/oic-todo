@@ -21,7 +21,8 @@ class CreateTasksTable extends Migration
             $table->boolean('completed')->default(false)->comment('タスクの状態');
             $table->integer('score')->default(0)->comment('タスク完了時の獲得スコア');
             $table->string('user_id');
-            $table->timestamps();
+            $table->dateTime('closed_at')->nullable();
+            $table->dateTime('reopen_at')->nullable();
         });
     }
 

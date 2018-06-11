@@ -24,7 +24,7 @@ class CreateTasksSeeder extends Seeder
                 'completed' => false,
                 'score' => $faker->numberBetween(0, 500),
                 'user_id' => 'tyokinuhata',
-                'created_at' => $this->getRandomDate(2015, 2020)
+                'reopen_at' => $this->getRandomDate(2015, 2020)
             ]);
         }
     }
@@ -37,12 +37,15 @@ class CreateTasksSeeder extends Seeder
      */
     protected function getRandomDate($beginYear, $endYear)
     {
-        $begin = Carbon::create($beginYear, 1, 1, 0, 0, 0);
-        $end = Carbon::create($endYear, 12, 31, 23, 59, 59);
+        $start = Carbon::create($beginYear, 1, 1, 0, 0, 0);
+        $end = Carbon::create($endYear, 12, 31, 23, 59);
 
-        $min = strtotime($begin);
+        $min = strtotime($start);
         $max = strtotime($end);
 
-        return date(rand($min, $max));
+        $date = rand($min, $max);
+        $date = date('Y-m-d H:i:s', $date);
+
+        return $date;
     }
 }

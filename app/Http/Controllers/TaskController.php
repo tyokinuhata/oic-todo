@@ -33,7 +33,7 @@ class TaskController extends Controller
             'completed' => false,
             'score' => 0,
             'user_id' => $user_id,
-            'created_at' => Carbon::now()
+            'reopen_at' => Carbon::now()
         ]);
 
         return response('OK', 200);
@@ -51,7 +51,7 @@ class TaskController extends Controller
         }
 
         // タスクの取得
-        $tasks = Task::where('user_id', $user_id)->where('completed', true)->latest('updated_at')->get();
+        $tasks = Task::where('user_id', $user_id)->where('completed', true)->latest('closed_at')->get();
 
         return response($tasks, '200');
     }
@@ -68,7 +68,7 @@ class TaskController extends Controller
         }
 
         // タスクの取得
-        $tasks = Task::where('user_id', $user_id)->where('completed', false)->latest('created_at')->get();
+        $tasks = Task::where('user_id', $user_id)->where('completed', false)->latest('reopen_at')->get();
 
         return response($tasks, '200');
     }
@@ -123,7 +123,8 @@ class TaskController extends Controller
         }
 
         Task::where('task_id', $request->task_id)->update([
-            'completed' => true
+            'completed' => true,
+            'closed_at' => Carbon::now()
         ]);
 
         return response('OK', 200);
