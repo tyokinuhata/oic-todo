@@ -28,6 +28,7 @@
           <input
                   id="confirm-password"
                   v-model="confirmPassword"
+                  @keyup.enter="signUp()"
                   type="password"
                   class="form-control">
         </div>

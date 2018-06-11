@@ -51233,6 +51233,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51369,6 +51370,15 @@ var render = function() {
               attrs: { id: "confirm-password", type: "password" },
               domProps: { value: _vm.confirmPassword },
               on: {
+                keyup: function($event) {
+                  if (
+                    !("button" in $event) &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  _vm.signUp()
+                },
                 input: function($event) {
                   if ($event.target.composing) {
                     return
