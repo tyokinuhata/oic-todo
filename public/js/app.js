@@ -51583,7 +51583,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         token: this.token,
         title: this.add.title,
         description: this.add.description
-      }).then(function (response) {});
+      }).then(function (response) {
+        console.log(response.data);
+      });
     },
     updateTask: function updateTask(taskId) {
       this.update.taskId = taskId;

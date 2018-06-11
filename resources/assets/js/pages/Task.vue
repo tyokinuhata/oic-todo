@@ -112,7 +112,9 @@ export default {
         title: this.add.title,
         description: this.add.description
       })
-      .then(response => {})
+      .then(response => {
+        console.log(response.data)
+      })
     },
     updateTask(taskId) {
       this.update.taskId = taskId

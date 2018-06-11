@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\Task;
@@ -29,9 +30,10 @@ class TaskController extends Controller
             'task_id' => uniqid(),
             'title' => $request->title,
             'description' => $request->description,
-            'state' => 'incomplete',
+            'completed' => false,
             'score' => 0,
-            'user_id' => $user_id
+            'user_id' => $user_id,
+            'created_at' => Carbon::now()
         ]);
 
         return response('OK', 200);
@@ -49,7 +51,7 @@ class TaskController extends Controller
         }
 
         // タスクの取得
-        $tasks = Task::where('user_id', $user_id)->where('completed', true)->orderBy('created_at', 'desc')->get();
+        $tasks = Task::where('user_id', $user_id)->where('completed', true)->latest('updated_at')->get();
 
         return response($tasks, '200');
     }
@@ -66,7 +68,7 @@ class TaskController extends Controller
         }
 
         // タスクの取得
-        $tasks = Task::where('user_id', $user_id)->where('completed', false)->orderBy('updated_at', 'desc')->get();
+        $tasks = Task::where('user_id', $user_id)->where('completed', false)->latest('created_at')->get();
 
         return response($tasks, '200');
     }
