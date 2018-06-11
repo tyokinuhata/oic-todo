@@ -21,7 +21,7 @@ class CreateTasksSeeder extends Seeder
                 'task_id'=> uniqid(),
                 'title' => $faker->word,
                 'description' => $faker->text($maxNbChars = 200),
-                'completed' => $faker->boolean($chanceOfGettingTrue = 50),
+                'completed' => false,
                 'score' => $faker->numberBetween(0, 500),
                 'user_id' => 'tyokinuhata',
                 'created_at' => $this->getRandomDate(2015, 2020)

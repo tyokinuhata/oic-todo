@@ -138,13 +138,23 @@ export default {
       })
       .then(response => {})
     },
-    getTask() {
-      axios.post('/api/task/list', {
+    getCompleteTask() {
+      axios.post('/api/task/list/complete', {
         token: this.token
       })
       .then(response => {
         for (let d of response.data) {
-          d.completed === '1' ? this.lists.complete.push(d) : this.lists.incomplete.push(d)
+          this.lists.complete.push(d);
+        }
+      })
+    },
+    getIncompleteTask() {
+      axios.post('/api/task/list/incomplete', {
+        token: this.token
+      })
+      .then(response => {
+        for (let d of response.data) {
+          this.lists.incomplete.push(d);
         }
       })
     },
@@ -160,7 +170,8 @@ export default {
   },
   created() {
     this.getToken()
-    this.getTask()
+    this.getCompleteTask()
+    this.getIncompleteTask()
   }
 };
 </script>
