@@ -142,7 +142,8 @@ class TaskController extends Controller
         }
 
         Task::where('task_id', $request->task_id)->update([
-            'completed' => false
+            'completed' => false,
+            'reopen_at' => Carbon::now()
         ]);
 
         return response('OK', 200);
