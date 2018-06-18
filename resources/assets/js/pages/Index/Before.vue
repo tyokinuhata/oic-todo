@@ -58,6 +58,7 @@ export default {
         .then(response => {
           document.cookie = "token=" + response.data + "; max-age=3600";
           this.$router.push({ path: "/task" });
+          this.$store.commit('setSignedIn', true);
         })
         .catch(error => {
           console.log(error.response);

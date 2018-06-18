@@ -25,8 +25,9 @@ export default {
   },
   created() {
     if (document.cookie.indexOf("token") === 0) {
-      this.signedIn = true;
+      this.$store.commit('setSignedIn', true);
     }
+    this.signedIn = this.$store.getters.signedIn
   }
 };
 </script>
