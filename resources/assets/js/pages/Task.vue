@@ -113,7 +113,8 @@ export default {
         description: this.add.description
       })
       .then(response => {
-        console.log(response.data)
+        this.getCompleteTask()
+        this.getIncompleteTask()
       })
     },
     updateTask(taskId) {
@@ -124,27 +125,37 @@ export default {
         token: this.token,
         task_id: taskId
       })
-      .then(response => {})
+      .then(response => {
+        this.getCompleteTask()
+        this.getIncompleteTask()
+      })
     },
     closeTask(taskId) {
       axios.post('/api/task/close', {
         token: this.token,
         task_id: taskId
       })
-      .then(response => {})
+      .then(response => {
+        this.getCompleteTask()
+        this.getIncompleteTask()
+      })
     },
     reopenTask(taskId) {
       axios.post('/api/task/reopen', {
         token: this.token,
         task_id: taskId
       })
-      .then(response => {})
+      .then(response => {
+        this.getCompleteTask()
+        this.getIncompleteTask()
+      })
     },
     getCompleteTask() {
       axios.post('/api/task/list/complete', {
         token: this.token
       })
       .then(response => {
+        this.lists.complete = []
         for (let d of response.data) {
           this.lists.complete.push(d);
         }
@@ -155,6 +166,7 @@ export default {
         token: this.token
       })
       .then(response => {
+        this.lists.incomplete = []
         for (let d of response.data) {
           this.lists.incomplete.push(d);
         }

@@ -51612,41 +51612,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     addTask: function addTask() {
+      var _this = this;
+
       axios.post('/api/task/add', {
         token: this.token,
         title: this.add.title,
         description: this.add.description
       }).then(function (response) {
-        console.log(response.data);
+        _this.getCompleteTask();
+        _this.getIncompleteTask();
       });
     },
     updateTask: function updateTask(taskId) {
       this.update.taskId = taskId;
     },
     deleteTask: function deleteTask(taskId) {
+      var _this2 = this;
+
       axios.post('/api/task/delete', {
         token: this.token,
         task_id: taskId
-      }).then(function (response) {});
+      }).then(function (response) {
+        _this2.getCompleteTask();
+        _this2.getIncompleteTask();
+      });
     },
     closeTask: function closeTask(taskId) {
+      var _this3 = this;
+
       axios.post('/api/task/close', {
         token: this.token,
         task_id: taskId
-      }).then(function (response) {});
+      }).then(function (response) {
+        _this3.getCompleteTask();
+        _this3.getIncompleteTask();
+      });
     },
     reopenTask: function reopenTask(taskId) {
+      var _this4 = this;
+
       axios.post('/api/task/reopen', {
         token: this.token,
         task_id: taskId
-      }).then(function (response) {});
+      }).then(function (response) {
+        _this4.getCompleteTask();
+        _this4.getIncompleteTask();
+      });
     },
     getCompleteTask: function getCompleteTask() {
-      var _this = this;
+      var _this5 = this;
 
       axios.post('/api/task/list/complete', {
         token: this.token
       }).then(function (response) {
+        _this5.lists.complete = [];
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
         var _iteratorError = undefined;
@@ -51655,7 +51674,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           for (var _iterator = response.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var d = _step.value;
 
-            _this.lists.complete.push(d);
+            _this5.lists.complete.push(d);
           }
         } catch (err) {
           _didIteratorError = true;
@@ -51674,11 +51693,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     getIncompleteTask: function getIncompleteTask() {
-      var _this2 = this;
+      var _this6 = this;
 
       axios.post('/api/task/list/incomplete', {
         token: this.token
       }).then(function (response) {
+        _this6.lists.incomplete = [];
         var _iteratorNormalCompletion2 = true;
         var _didIteratorError2 = false;
         var _iteratorError2 = undefined;
@@ -51687,7 +51707,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           for (var _iterator2 = response.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
             var d = _step2.value;
 
-            _this2.lists.incomplete.push(d);
+            _this6.lists.incomplete.push(d);
           }
         } catch (err) {
           _didIteratorError2 = true;
