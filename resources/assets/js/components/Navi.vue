@@ -65,6 +65,7 @@ export default {
   methods: {
     signOut() {
       document.cookie = "token=; max-age=0";
+      this.$store.commit('setSignedIn', false);
       this.$router.push({ path: "/" });
     }
   }
