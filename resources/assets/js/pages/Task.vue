@@ -10,10 +10,10 @@
       <div>
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a href="#incomplete" class="nav-link active" data-toggle="tab">未完了タスク</a>
+            <a href="#incomplete" class="nav-link active" data-toggle="tab">未完了タスク({{ lists.incomplete.length }})</a>
           </li>
           <li class="nav-item">
-            <a href="#complete" class="nav-link" data-toggle="tab">完了タスク</a>
+            <a href="#complete" class="nav-link" data-toggle="tab">完了タスク({{ lists.complete.length }})</a>
           </li>
         </ul>
         <div class="tab-content">

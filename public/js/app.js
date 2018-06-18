@@ -52026,7 +52026,37 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", [
-          _vm._m(0),
+          _c("ul", { staticClass: "nav nav-tabs" }, [
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link active",
+                  attrs: { href: "#incomplete", "data-toggle": "tab" }
+                },
+                [
+                  _vm._v(
+                    "未完了タスク(" + _vm._s(_vm.lists.incomplete.length) + ")"
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { href: "#complete", "data-toggle": "tab" }
+                },
+                [
+                  _vm._v(
+                    "完了タスク(" + _vm._s(_vm.lists.complete.length) + ")"
+                  )
+                ]
+              )
+            ])
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "tab-content" }, [
             _c(
@@ -52034,7 +52064,7 @@ var render = function() {
               { staticClass: "tab-pane active", attrs: { id: "incomplete" } },
               [
                 _c("table", { staticClass: "table" }, [
-                  _vm._m(1),
+                  _vm._m(0),
                   _vm._v(" "),
                   _c(
                     "tbody",
@@ -52104,7 +52134,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "tab-pane", attrs: { id: "complete" } }, [
               _c("table", { staticClass: "table" }, [
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -52180,34 +52210,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "nav nav-tabs" }, [
-      _c("li", { staticClass: "nav-item" }, [
-        _c(
-          "a",
-          {
-            staticClass: "nav-link active",
-            attrs: { href: "#incomplete", "data-toggle": "tab" }
-          },
-          [_vm._v("未完了タスク")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "nav-item" }, [
-        _c(
-          "a",
-          {
-            staticClass: "nav-link",
-            attrs: { href: "#complete", "data-toggle": "tab" }
-          },
-          [_vm._v("完了タスク")]
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
