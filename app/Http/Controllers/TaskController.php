@@ -159,10 +159,16 @@ class TaskController extends Controller
             return response('Not Found', 404);
         }
 
+        // スコアの取得
+        $score = Task::select('score')->where('task_id', $request->task_id)->first()->score;
+
+        // 更新処理
         Task::where('task_id', $request->task_id)->update([
             'completed' => false,
-            'reopen_at' => Carbon::now()
+            'reopen_at' => Carbon::now(),
+            'score' => 0
         ]);
+        User::where('token', $request->token)->decrement('total_score', $score);
 
         return response('OK', 200);
     }
