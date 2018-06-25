@@ -122,10 +122,14 @@ class TaskController extends Controller
             return response('Not Found', 404);
         }
 
+        // TODO: 足し込むスコアを可変にする
         Task::where('task_id', $request->task_id)->update([
             'completed' => true,
-            'closed_at' => Carbon::now()
+            'closed_at' => Carbon::now(),
+            'score' => 200
         ]);
+
+        User::where('token', $request->token)->increment('total_score', 200);
 
         return response('OK', 200);
     }
