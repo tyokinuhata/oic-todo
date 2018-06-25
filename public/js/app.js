@@ -52762,9 +52762,9 @@ var render = function() {
       _c("navi"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("h1", [_vm._v("TOP100ランキング")]),
+        _c("h1", { staticClass: "mt-4" }, [_vm._v("TOP100ランキング")]),
         _vm._v(" "),
-        _c("table", { staticClass: "table" }, [
+        _c("table", { staticClass: "table mt-2" }, [
           _vm._m(0),
           _vm._v(" "),
           _c(

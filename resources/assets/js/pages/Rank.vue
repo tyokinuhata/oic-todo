@@ -2,8 +2,8 @@
   <div>
     <navi/>
     <div class="container">
-      <h1>TOP100ランキング</h1>
-      <table class="table">
+      <h1 class="mt-4">TOP100ランキング</h1>
+      <table class="table mt-2">
         <thead class="thead-dark">
           <tr>
             <th>#</th>
