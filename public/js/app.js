@@ -50310,7 +50310,7 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "container" }, [
       _c("div", [
-        _c("h1", [_vm._v("todoom")]),
+        _c("h1", { staticClass: "mt-4" }, [_vm._v("todoom")]),
         _vm._v(" "),
         _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
         _vm._v(" "),
@@ -50318,7 +50318,7 @@ var render = function() {
           _c("div", { staticClass: "card-header" }, [_vm._v("サインイン")]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("div", [
+            _c("div", { staticClass: "mt-3" }, [
               _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
               _vm._v(" "),
               _c("input", {
@@ -50353,7 +50353,7 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", [
+            _c("div", { staticClass: "mt-3" }, [
               _c("label", { attrs: { for: "password" } }, [
                 _vm._v("パスワード")
               ]),

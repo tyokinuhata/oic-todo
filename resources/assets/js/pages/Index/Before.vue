@@ -2,12 +2,12 @@
   <div>
     <div class="container">
       <div>
-        <h1>todoom</h1>
+        <h1 class="mt-4">todoom</h1>
         <p>todoomはポイントで競い合う新感覚TODOアプリです。</p>
         <div class="card">
           <div class="card-header">サインイン</div>
           <div class="card-body">
-            <div>
+            <div class="mt-3">
               <label for="user-id">ユーザID</label>
               <input
                       id="user-id"
@@ -17,7 +17,7 @@
                       class="form-control"
                       autofocus>
             </div>
-            <div>
+            <div class="mt-3">
               <label for="password">パスワード</label>
               <input
                       id="password"
