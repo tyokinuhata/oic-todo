@@ -51998,7 +51998,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "タイトル" },
+            attrs: { type: "text", placeholder: "タイトル", autofocus: "" },
             domProps: { value: _vm.add.title },
             on: {
               input: function($event) {

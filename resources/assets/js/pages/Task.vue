@@ -3,7 +3,7 @@
     <navi/>
     <div class="container">
       <div class="mt-4">
-        <input type="text" class="form-control" placeholder="タイトル" v-model="add.title">
+        <input type="text" class="form-control" placeholder="タイトル" v-model="add.title" autofocus>
         <textarea class="form-control mt-2" placeholder="説明" rows="8" v-model="add.description"></textarea>
         <div class="text-right">
           <button type="button" class="btn btn-primary mt-2" @click="addTask()">追加</button>
