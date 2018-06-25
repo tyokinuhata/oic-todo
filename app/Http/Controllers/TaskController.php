@@ -122,14 +122,28 @@ class TaskController extends Controller
             return response('Not Found', 404);
         }
 
-        // TODO: 足し込むスコアを可変にする
+        // 現在時刻とタスク生成時刻の差分
+        $created_at = Task::select('reopen_at')->where('task_id', $request->task_id)->first()->reopen_at;
+        $diff = Carbon::now()->diffInDays(Carbon::parse($created_at));
+
+        // スコアの計算
+        if ($diff <= 1) $score = 100;
+        else if ($diff <= 3) $score = 70;
+        else if ($diff <= 7) $score = 30;
+        else if ($diff <= 30) $score = -30;
+        else $score = -100;
+
+        // ボーナスポイントの計算
+        $bonus = mt_rand(-20, 20);
+        $score += $bonus;
+
+        // 更新処理
         Task::where('task_id', $request->task_id)->update([
             'completed' => true,
             'closed_at' => Carbon::now(),
-            'score' => 200
+            'score' => $score
         ]);
-
-        User::where('token', $request->token)->increment('total_score', 200);
+        User::where('token', $request->token)->increment('total_score', $score);
 
         return response('OK', 200);
     }
