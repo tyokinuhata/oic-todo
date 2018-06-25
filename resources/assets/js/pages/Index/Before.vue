@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="container">
-      <div>
-        <h1 class="mt-4">todoom</h1>
+      <div class="mt-4">
+        <h1>todoom</h1>
         <p>todoomはポイントで競い合う新感覚TODOアプリです。</p>
         <div class="card">
           <div class="card-header">サインイン</div>
           <div class="card-body">
-            <div class="mt-3">
+            <div>
               <label for="user-id">ユーザID</label>
               <input
                       id="user-id"
