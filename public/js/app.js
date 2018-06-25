@@ -50268,6 +50268,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -50315,104 +50317,104 @@ var render = function() {
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [_vm._v("サインイン")]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            [
-              _c("div", [
-                _c("label", { attrs: { for: "user-id" } }, [
-                  _vm._v("ユーザID")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.userId,
-                      expression: "form.userId"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { id: "user-id", type: "text", autofocus: "" },
-                  domProps: { value: _vm.form.userId },
-                  on: {
-                    keyup: function($event) {
-                      if (
-                        !("button" in $event) &&
-                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                      ) {
-                        return null
-                      }
-                      _vm.signIn()
-                    },
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "userId", $event.target.value)
-                    }
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", [
+              _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.userId,
+                    expression: "form.userId"
                   }
-                })
+                ],
+                staticClass: "form-control",
+                attrs: { id: "user-id", type: "text", autofocus: "" },
+                domProps: { value: _vm.form.userId },
+                on: {
+                  keyup: function($event) {
+                    if (
+                      !("button" in $event) &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    _vm.signIn()
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "userId", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("label", { attrs: { for: "password" } }, [
+                _vm._v("パスワード")
               ]),
               _vm._v(" "),
-              _c("div", [
-                _c("label", { attrs: { for: "password" } }, [
-                  _vm._v("パスワード")
-                ]),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.password,
+                    expression: "form.password"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { id: "password", type: "password" },
+                domProps: { value: _vm.form.password },
+                on: {
+                  keyup: function($event) {
+                    if (
+                      !("button" in $event) &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    _vm.signIn()
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "password", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "text-right mt-3" },
+              [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        _vm.signIn()
+                      }
+                    }
+                  },
+                  [_vm._v("サインイン")]
+                ),
                 _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.password,
-                      expression: "form.password"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { id: "password", type: "password" },
-                  domProps: { value: _vm.form.password },
-                  on: {
-                    keyup: function($event) {
-                      if (
-                        !("button" in $event) &&
-                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                      ) {
-                        return null
-                      }
-                      _vm.signIn()
-                    },
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "password", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      _vm.signIn()
-                    }
-                  }
-                },
-                [_vm._v("サインイン")]
-              ),
-              _vm._v(" "),
-              _c("router-link", { attrs: { to: "/signup" } }, [
-                _vm._v("サインアップはこちら")
-              ])
-            ],
-            1
-          )
+                _c("router-link", { attrs: { to: "/signup" } }, [
+                  _vm._v("サインアップはこちら")
+                ])
+              ],
+              1
+            )
+          ])
         ])
       ])
     ])

@@ -26,11 +26,13 @@
                       type="password"
                       class="form-control">
             </div>
-            <button
-                    type="button"
-                    class="btn btn-primary"
-                    @click="signIn()">サインイン</button>
-            <router-link to="/signup">サインアップはこちら</router-link>
+            <div class="text-right mt-3">
+              <button
+                      type="button"
+                      class="btn btn-primary"
+                      @click="signIn()">サインイン</button>
+              <router-link to="/signup">サインアップはこちら</router-link>
+            </div>
           </div>
         </div>
       </div>
