@@ -2,12 +2,14 @@
   <div>
     <navi/>
     <div class="container">
-      <div>
+      <div class="mt-4">
         <input type="text" class="form-control" placeholder="タイトル" v-model="add.title">
-        <textarea class="form-control" placeholder="説明" v-model="add.description"></textarea>
-        <button type="button" class="btn btn-primary" @click="addTask()">追加</button>
+        <textarea class="form-control mt-2" placeholder="説明" rows="8" v-model="add.description"></textarea>
+        <div class="text-right">
+          <button type="button" class="btn btn-primary mt-2" @click="addTask()">追加</button>
+        </div>
       </div>
-      <div>
+      <div class="mt-4">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a href="#incomplete" class="nav-link active" data-toggle="tab">未完了タスク({{ lists.incomplete.length }})</a>

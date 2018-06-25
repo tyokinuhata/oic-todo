@@ -51584,6 +51584,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -51985,7 +51987,7 @@ var render = function() {
       _c("navi"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("div", [
+        _c("div", { staticClass: "mt-4" }, [
           _c("input", {
             directives: [
               {
@@ -52017,8 +52019,8 @@ var render = function() {
                 expression: "add.description"
               }
             ],
-            staticClass: "form-control",
-            attrs: { placeholder: "説明" },
+            staticClass: "form-control mt-2",
+            attrs: { placeholder: "説明", rows: "8" },
             domProps: { value: _vm.add.description },
             on: {
               input: function($event) {
@@ -52030,22 +52032,24 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  _vm.addTask()
+          _c("div", { staticClass: "text-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary mt-2",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.addTask()
+                  }
                 }
-              }
-            },
-            [_vm._v("追加")]
-          )
+              },
+              [_vm._v("追加")]
+            )
+          ])
         ]),
         _vm._v(" "),
-        _c("div", [
+        _c("div", { staticClass: "mt-4" }, [
           _c("ul", { staticClass: "nav nav-tabs" }, [
             _c("li", { staticClass: "nav-item" }, [
               _c(
