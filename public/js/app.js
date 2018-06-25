@@ -51339,6 +51339,10 @@ var render = function() {
               "div",
               { staticClass: "text-right mt-3" },
               [
+                _c("router-link", { attrs: { to: "/signup" } }, [
+                  _vm._v("サインアップはこちら")
+                ]),
+                _vm._v(" "),
                 _c(
                   "button",
                   {
@@ -51351,11 +51355,7 @@ var render = function() {
                     }
                   },
                   [_vm._v("サインイン")]
-                ),
-                _vm._v(" "),
-                _c("router-link", { attrs: { to: "/signup" } }, [
-                  _vm._v("サインアップはこちら")
-                ])
+                )
               ],
               1
             )
@@ -52371,6 +52371,10 @@ var render = function() {
               "div",
               { staticClass: "text-right mt-3" },
               [
+                _c("router-link", { attrs: { to: "/" } }, [
+                  _vm._v("サインインはこちら")
+                ]),
+                _vm._v(" "),
                 _c(
                   "button",
                   {
@@ -52383,11 +52387,7 @@ var render = function() {
                     }
                   },
                   [_vm._v("サインアップ")]
-                ),
-                _vm._v(" "),
-                _c("router-link", { attrs: { to: "/" } }, [
-                  _vm._v("サインインはこちら")
-                ])
+                )
               ],
               1
             )

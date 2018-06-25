@@ -36,11 +36,11 @@
                       class="form-control">
             </div>
             <div class="text-right mt-3">
+              <router-link to="/">サインインはこちら</router-link>
               <button
                       type="button"
                       class="btn btn-primary"
                       @click="signUp()">サインアップ</button>
-              <router-link to="/">サインインはこちら</router-link>
             </div>
           </div>
         </div>
