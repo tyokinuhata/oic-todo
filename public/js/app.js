@@ -51927,7 +51927,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "navbar navbar-expand-sm navbar-dark bg-primary testtt" },
+    { staticClass: "navbar navbar-expand-sm navbar-dark bg-primary" },
     [
       _c(
         "div",
@@ -53577,7 +53577,9 @@ var render = function() {
     [
       _c("navi"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [_vm._v("\n    config\n  ")])
+      _c("div", { staticClass: "container" }, [
+        _vm._v("\n    もうちょっと待ってね！\n  ")
+      ])
     ],
     1
   )

@@ -2,7 +2,7 @@
   <div>
     <navi/>
     <div class="container">
-      config
+      もうちょっと待ってね！
     </div>
   </div>
 </template>

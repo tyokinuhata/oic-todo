@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary testtt">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <div class="container">
       <router-link 
         class="navbar-brand" 
@@ -20,8 +20,8 @@
         class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li>
-            <router-link 
-              class="nav-link" 
+            <router-link
+              class="nav-link"
               to="/">トップ</router-link>
           </li>
           <li>
