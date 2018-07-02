@@ -53611,12 +53611,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a
+  },
+  data: function data() {
+    return {
+      token: 0,
+      user: 0
+    };
+  },
+
+  methods: {
+    getToken: function getToken() {
+      var cookie = document.cookie.replace(/\s+/g, '').split(';');
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = cookie[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var c = _step.value;
+
+          if (c.indexOf('token') >= 0) {
+            this.token = c.slice(6);
+            break;
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    },
+    getUser: function getUser() {
+      var _this = this;
+
+      axios.post('/api/user/me', {
+        token: this.token
+      }).then(function (response) {
+        _this.user = response.data;
+      });
+    }
+  },
+  created: function created() {
+    this.getToken();
+    this.getUser();
   }
 });
 
@@ -53633,7 +53692,19 @@ var render = function() {
     [
       _c("navi"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [_vm._v("\n    mypage\n  ")])
+      _c("div", { staticClass: "container" }, [
+        _c("div", [
+          _c("span", [_vm._v("ユーザID: ")]),
+          _vm._v(" "),
+          _c("span", [_vm._v(_vm._s(_vm.user.user_id))])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", [_vm._v("トータルスコア: ")]),
+          _vm._v(" "),
+          _c("span", [_vm._v(_vm._s(_vm.user.total_score))])
+        ])
+      ])
     ],
     1
   )

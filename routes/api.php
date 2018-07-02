@@ -39,3 +39,8 @@ Route::prefix('task')->group(function () {
 Route::prefix('rank')->group(function () {
     Route::get('/list', 'RankController@list');
 });
+
+// ユーザ系API
+Route::prefix('user')->group(function () {
+    Route::post('/me', 'UserController@me');
+});
