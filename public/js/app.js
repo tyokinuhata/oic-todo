@@ -53056,9 +53056,13 @@ var render = function() {
                       return _c("tr", [
                         _c("td", [_vm._v(_vm._s(l.title))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(l.reopen_at))]),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(l.reopen_at.substr(0, 10).replace(/-/g, "/"))
+                          )
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(l.acceptable_score))]),
+                        _c("td", [_vm._v(_vm._s(l.acceptable_score) + "pt")]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(l.description))]),
                         _vm._v(" "),

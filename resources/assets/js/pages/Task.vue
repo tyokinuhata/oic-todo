@@ -35,8 +35,8 @@
               <tbody>
                 <tr v-for="l in lists.incomplete">
                   <td>{{ l.title }}</td>
-                  <td>{{ l.reopen_at }}</td>
-                  <td>{{ l.acceptable_score }}</td>
+                  <td>{{ ((l.reopen_at).substr(0, 10)).replace(/-/g, '/') }}</td>
+                  <td>{{ l.acceptable_score }}pt</td>
                   <td>{{ l.description }}</td>
                   <td>
                     <button type="button" class="btn btn-primary" @click="closeTask(l.task_id)">完了</button>
