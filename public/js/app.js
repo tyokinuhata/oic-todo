@@ -14091,18 +14091,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_Signup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__pages_Signup__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_Task__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_Task___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__pages_Task__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_TaskEdit__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_TaskEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__pages_TaskEdit__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_TaskOld__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_TaskOld___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__pages_TaskOld__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_TaskOldEdit__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_TaskOldEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__pages_TaskOldEdit__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Mypage__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Mypage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_Mypage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Config__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__pages_Config__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_Rank__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_Rank___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__pages_Rank__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_Mypage__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_Mypage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__pages_Mypage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_Config__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_Config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__pages_Config__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Rank__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Rank___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__pages_Rank__);
 __webpack_require__(16);
 
 window.Vue = __webpack_require__(39);
@@ -14122,9 +14116,6 @@ Vue.component('app', __webpack_require__(44));
 
 
 
-
-
-
 var routes = [{
   path: '/',
   component: __WEBPACK_IMPORTED_MODULE_2__pages_Index___default.a
@@ -14135,23 +14126,14 @@ var routes = [{
   path: '/task',
   component: __WEBPACK_IMPORTED_MODULE_4__pages_Task___default.a
 }, {
-  path: '/task/edit',
-  component: __WEBPACK_IMPORTED_MODULE_5__pages_TaskEdit___default.a
-}, {
-  path: '/task/old',
-  component: __WEBPACK_IMPORTED_MODULE_6__pages_TaskOld__["default"]
-}, {
-  path: '/task/old/edit',
-  component: __WEBPACK_IMPORTED_MODULE_7__pages_TaskOldEdit__["default"]
-}, {
   path: '/rank',
-  component: __WEBPACK_IMPORTED_MODULE_10__pages_Rank___default.a
+  component: __WEBPACK_IMPORTED_MODULE_7__pages_Rank___default.a
 }, {
   path: '/mypage',
-  component: __WEBPACK_IMPORTED_MODULE_8__pages_Mypage___default.a
+  component: __WEBPACK_IMPORTED_MODULE_5__pages_Mypage___default.a
 }, {
   path: '/config',
-  component: __WEBPACK_IMPORTED_MODULE_9__pages_Config___default.a
+  component: __WEBPACK_IMPORTED_MODULE_6__pages_Config___default.a
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
@@ -53255,19 +53237,9 @@ if (false) {
 }
 
 /***/ }),
-/* 70 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/tyokinuhata/index/workspace/todoom/resources/assets/js/pages/TaskOld.vue'");
-
-/***/ }),
+/* 70 */,
 /* 71 */,
-/* 72 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/tyokinuhata/index/workspace/todoom/resources/assets/js/pages/TaskOldEdit.vue'");
-
-/***/ }),
+/* 72 */,
 /* 73 */,
 /* 74 */,
 /* 75 */,
