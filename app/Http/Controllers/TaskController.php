@@ -70,6 +70,19 @@ class TaskController extends Controller
         // タスクの取得
         $tasks = Task::where('user_id', $user_id)->where('completed', false)->latest('reopen_at')->get();
 
+        // 現在獲得可能なスコアの計算
+        foreach ($tasks as $task) {
+            $diff = Carbon::now()->diffInDays(Carbon::parse($task->reopen_at));
+
+            if ($diff <= 1) $score = 100;
+            else if ($diff <= 3) $score = 70;
+            else if ($diff <= 7) $score = 30;
+            else if ($diff <= 30) $score = -30;
+            else $score = -100;
+
+            $task->acceptable_score = $score;
+        }
+
         return response($tasks, '200');
     }
 
