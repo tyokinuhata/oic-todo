@@ -52542,6 +52542,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -53052,6 +53056,10 @@ var render = function() {
                       return _c("tr", [
                         _c("td", [_vm._v(_vm._s(l.title))]),
                         _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(l.reopen_at))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(l.acceptable_score))]),
+                        _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(l.description))]),
                         _vm._v(" "),
                         _c("td", [
@@ -53197,6 +53205,10 @@ var staticRenderFns = [
     return _c("thead", [
       _c("tr", [
         _c("th", [_vm._v("タイトル")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("作成日")]),
+        _vm._v(" "),
+        _c("th", { staticStyle: { width: "15%" } }, [_vm._v("獲得可能スコア")]),
         _vm._v(" "),
         _c("th", [_vm._v("説明")]),
         _vm._v(" "),

@@ -24,6 +24,8 @@
               <thead>
               <tr>
                 <th>タイトル</th>
+                <th>作成日</th>
+                <th style="width: 15%;">獲得可能スコア</th>
                 <th>説明</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
@@ -33,6 +35,8 @@
               <tbody>
                 <tr v-for="l in lists.incomplete">
                   <td>{{ l.title }}</td>
+                  <td>{{ l.reopen_at }}</td>
+                  <td>{{ l.acceptable_score }}</td>
                   <td>{{ l.description }}</td>
                   <td>
                     <button type="button" class="btn btn-primary" @click="closeTask(l.task_id)">完了</button>
