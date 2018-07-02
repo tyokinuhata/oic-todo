@@ -37,7 +37,7 @@
           <li>
             <router-link 
               class="nav-link" 
-              to="/user/:id">マイページ</router-link>
+              to="/mypage">マイページ</router-link>
           </li>
           <li>
             <div 

@@ -16,7 +16,7 @@ import Task from './pages/Task'
 import TaskEdit from './pages/TaskEdit'
 import TaskOld from './pages/TaskOld'
 import TaskOldEdit from './pages/TaskOldEdit'
-import User from './pages/User'
+import Mypage from './pages/Mypage'
 import Config from './pages/Config'
 import Rank from './pages/Rank'
 
@@ -50,8 +50,8 @@ const routes = [
     component: Rank
   },
   {
-    path: '/user/:id',
-    component: User
+    path: '/mypage',
+    component: Mypage
   },
   {
     path: '/config',

@@ -2,7 +2,7 @@
   <div>
     <navi/>
     <div class="container">
-      user
+      mypage
     </div>
   </div>
 </template>

@@ -14097,8 +14097,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_TaskOld___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__pages_TaskOld__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_TaskOldEdit__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_TaskOldEdit___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__pages_TaskOldEdit__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_User__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_User___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_User__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Mypage__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Mypage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_Mypage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Config__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__pages_Config__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_Rank__ = __webpack_require__(80);
@@ -14147,8 +14147,8 @@ var routes = [{
   path: '/rank',
   component: __WEBPACK_IMPORTED_MODULE_10__pages_Rank___default.a
 }, {
-  path: '/user/:id',
-  component: __WEBPACK_IMPORTED_MODULE_8__pages_User___default.a
+  path: '/mypage',
+  component: __WEBPACK_IMPORTED_MODULE_8__pages_Mypage___default.a
 }, {
   path: '/config',
   component: __WEBPACK_IMPORTED_MODULE_9__pages_Config___default.a
@@ -51990,7 +51990,7 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { staticClass: "nav-link", attrs: { to: "/user/:id" } },
+                      { staticClass: "nav-link", attrs: { to: "/mypage" } },
                       [_vm._v("マイページ")]
                     )
                   ],
@@ -53391,107 +53391,9 @@ if (false) {
 }
 
 /***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(75)
-/* template */
-var __vue_template__ = __webpack_require__(76)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/pages/User.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5126a008", Component.options)
-  } else {
-    hotAPI.reload("data-v-5126a008", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 75 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Navi__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a
-  }
-});
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("navi"),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [_vm._v("\n    user\n  ")])
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5126a008", module.exports)
-  }
-}
-
-/***/ }),
+/* 74 */,
+/* 75 */,
+/* 76 */,
 /* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -53791,6 +53693,110 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(88)
+/* template */
+var __vue_template__ = __webpack_require__(89)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/pages/Mypage.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6634fd90", Component.options)
+  } else {
+    hotAPI.reload("data-v-6634fd90", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Navi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Navi__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Navi: __WEBPACK_IMPORTED_MODULE_0__components_Navi___default.a
+  }
+});
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("navi"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_vm._v("\n    mypage\n  ")])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6634fd90", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
