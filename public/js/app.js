@@ -51215,6 +51215,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51254,111 +51256,115 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "mt-4" }, [
-        _c("h1", [_vm._v("todoom")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("サインイン")]),
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("h1", { staticClass: "mt-4" }, [_vm._v("todoom")]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", [
-              _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.userId,
-                    expression: "form.userId"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { id: "user-id", type: "text", autofocus: "" },
-                domProps: { value: _vm.form.userId },
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !("button" in $event) &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    _vm.signIn()
-                  },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "userId", $event.target.value)
-                  }
-                }
-              })
-            ]),
+          _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [_vm._v("サインイン")]),
             _vm._v(" "),
-            _c("div", { staticClass: "mt-3" }, [
-              _c("label", { attrs: { for: "password" } }, [
-                _vm._v("パスワード")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.password,
-                    expression: "form.password"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { id: "password", type: "password" },
-                domProps: { value: _vm.form.password },
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !("button" in $event) &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    _vm.signIn()
-                  },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "password", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "text-right mt-3" },
-              [
-                _c("router-link", { attrs: { to: "/signup" } }, [
-                  _vm._v("サインアップはこちら")
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", [
+                _c("label", { attrs: { for: "user-id" } }, [
+                  _vm._v("ユーザID")
                 ]),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        _vm.signIn()
-                      }
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.userId,
+                      expression: "form.userId"
                     }
-                  },
-                  [_vm._v("サインイン")]
-                )
-              ],
-              1
-            )
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "user-id", type: "text", autofocus: "" },
+                  domProps: { value: _vm.form.userId },
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !("button" in $event) &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      _vm.signIn()
+                    },
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "userId", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-3" }, [
+                _c("label", { attrs: { for: "password" } }, [
+                  _vm._v("パスワード")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.password,
+                      expression: "form.password"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "password", type: "password" },
+                  domProps: { value: _vm.form.password },
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !("button" in $event) &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      _vm.signIn()
+                    },
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "password", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "text-right mt-3" },
+                [
+                  _c("router-link", { attrs: { to: "/signup" } }, [
+                    _vm._v("サインアップはこちら")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          _vm.signIn()
+                        }
+                      }
+                    },
+                    [_vm._v("サインイン")]
+                  )
+                ],
+                1
+              )
+            ])
           ])
         ])
       ])
@@ -52211,6 +52217,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -52249,148 +52257,152 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "mt-4" }, [
-        _c("h1", [_vm._v("todoom")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("サインアップ")]),
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("h1", { staticClass: "mt-4" }, [_vm._v("todoom")]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", [
-              _c("label", { attrs: { for: "user-id" } }, [_vm._v("ユーザID")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.userId,
-                    expression: "userId"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { id: "user-id", type: "text", autofocus: "" },
-                domProps: { value: _vm.userId },
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !("button" in $event) &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    _vm.signUp()
-                  },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.userId = $event.target.value
-                  }
-                }
-              })
-            ]),
+          _c("p", [_vm._v("todoomはポイントで競い合う新感覚TODOアプリです。")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [_vm._v("サインアップ")]),
             _vm._v(" "),
-            _c("div", { staticClass: "mt-3" }, [
-              _c("label", { attrs: { for: "password" } }, [
-                _vm._v("パスワード")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.password,
-                    expression: "password"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { id: "password", type: "password" },
-                domProps: { value: _vm.password },
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !("button" in $event) &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    _vm.signUp()
-                  },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.password = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-3" }, [
-              _c("label", { attrs: { for: "confirm-password" } }, [
-                _vm._v("パスワード(確認)")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.confirmPassword,
-                    expression: "confirmPassword"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { id: "confirm-password", type: "password" },
-                domProps: { value: _vm.confirmPassword },
-                on: {
-                  keyup: function($event) {
-                    if (
-                      !("button" in $event) &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    _vm.signUp()
-                  },
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.confirmPassword = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "text-right mt-3" },
-              [
-                _c("router-link", { attrs: { to: "/" } }, [
-                  _vm._v("サインインはこちら")
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", [
+                _c("label", { attrs: { for: "user-id" } }, [
+                  _vm._v("ユーザID")
                 ]),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        _vm.signUp()
-                      }
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.userId,
+                      expression: "userId"
                     }
-                  },
-                  [_vm._v("サインアップ")]
-                )
-              ],
-              1
-            )
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "user-id", type: "text", autofocus: "" },
+                  domProps: { value: _vm.userId },
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !("button" in $event) &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      _vm.signUp()
+                    },
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.userId = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-3" }, [
+                _c("label", { attrs: { for: "password" } }, [
+                  _vm._v("パスワード")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.password,
+                      expression: "password"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "password", type: "password" },
+                  domProps: { value: _vm.password },
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !("button" in $event) &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      _vm.signUp()
+                    },
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.password = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-3" }, [
+                _c("label", { attrs: { for: "confirm-password" } }, [
+                  _vm._v("パスワード(確認)")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.confirmPassword,
+                      expression: "confirmPassword"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { id: "confirm-password", type: "password" },
+                  domProps: { value: _vm.confirmPassword },
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !("button" in $event) &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      _vm.signUp()
+                    },
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.confirmPassword = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "text-right mt-3" },
+                [
+                  _c("router-link", { attrs: { to: "/" } }, [
+                    _vm._v("サインインはこちら")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          _vm.signUp()
+                        }
+                      }
+                    },
+                    [_vm._v("サインアップ")]
+                  )
+                ],
+                1
+              )
+            ])
           ])
         ])
       ])
