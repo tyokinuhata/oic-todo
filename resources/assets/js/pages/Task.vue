@@ -56,6 +56,8 @@
               <thead>
               <tr>
                 <th>タイトル</th>
+                <th>完了日</th>
+                <th style="width: 10%;">獲得スコア</th>
                 <th>説明</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
@@ -65,6 +67,8 @@
               <tbody>
               <tr v-for="l in lists.complete">
                 <td>{{ l.title }}</td>
+                <td>{{ ((l.closed_at).substr(0, 10)).replace(/-/g, '/') }}</td>
+                <td>{{ l.score }}pt</td>
                 <td>{{ l.description }}</td>
                 <td>
                   <button type="button" class="btn btn-warning" @click="reopenTask(l.task_id)">未完了</button>
