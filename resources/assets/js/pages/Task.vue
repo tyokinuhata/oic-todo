@@ -22,15 +22,15 @@
           <div id="incomplete" class="tab-pane active">
             <table class="table">
               <thead>
-              <tr>
-                <th class="text-center">タイトル</th>
-                <th class="text-center">作成日</th>
-                <th class="text-center" style="width: 15%;">獲得可能スコア</th>
-                <th class="text-center">説明</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
-              </tr>
+                <tr>
+                  <th class="text-center">タイトル</th>
+                  <th class="text-center">作成日</th>
+                  <th class="text-center" style="width: 15%;">獲得可能スコア</th>
+                  <th class="text-center">説明</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                </tr>
               </thead>
               <tbody>
                 <tr v-for="l in lists.incomplete">
@@ -54,32 +54,32 @@
           <div id="complete" class="tab-pane">
             <table class="table">
               <thead>
-              <tr>
-                <th class="text-center">タイトル</th>
-                <th class="text-center">完了日</th>
-                <th class="text-center" style="width: 10%;">獲得スコア</th>
-                <th class="text-center">説明</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
-              </tr>
+                <tr>
+                  <th class="text-center">タイトル</th>
+                  <th class="text-center">完了日</th>
+                  <th class="text-center" style="width: 10%;">獲得スコア</th>
+                  <th class="text-center">説明</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                </tr>
               </thead>
               <tbody>
-              <tr v-for="l in lists.complete">
-                <td>{{ l.title }}</td>
-                <td class="text-center">{{ ((l.closed_at).substr(0, 10)).replace(/-/g, '/') }}</td>
-                <td class="text-center">{{ l.score }}pt</td>
-                <td>{{ l.description }}</td>
-                <td>
-                  <button type="button" class="btn btn-warning" @click="reopenTask(l.task_id)">未完了</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTaskModal" @click="updateTask(l.task_id)">編集</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-danger" @click="deleteTask(l.task_id)">削除</button>
-                </td>
-              </tr>
+                <tr v-for="l in lists.complete">
+                  <td>{{ l.title }}</td>
+                  <td class="text-center">{{ ((l.closed_at).substr(0, 10)).replace(/-/g, '/') }}</td>
+                  <td class="text-center">{{ l.score }}pt</td>
+                  <td>{{ l.description }}</td>
+                  <td>
+                    <button type="button" class="btn btn-warning" @click="reopenTask(l.task_id)">未完了</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTaskModal" @click="updateTask(l.task_id)">編集</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-danger" @click="deleteTask(l.task_id)">削除</button>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
