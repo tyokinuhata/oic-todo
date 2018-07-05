@@ -53060,13 +53060,15 @@ var render = function() {
                       return _c("tr", [
                         _c("td", [_vm._v(_vm._s(l.title))]),
                         _vm._v(" "),
-                        _c("td", [
+                        _c("td", { staticClass: "text-center" }, [
                           _vm._v(
                             _vm._s(l.reopen_at.substr(0, 10).replace(/-/g, "/"))
                           )
                         ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(l.acceptable_score) + "pt")]),
+                        _c("td", { staticClass: "text-center" }, [
+                          _vm._v(_vm._s(l.acceptable_score) + "pt")
+                        ]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(l.description))]),
                         _vm._v(" "),
@@ -53138,13 +53140,15 @@ var render = function() {
                     return _c("tr", [
                       _c("td", [_vm._v(_vm._s(l.title))]),
                       _vm._v(" "),
-                      _c("td", [
+                      _c("td", { staticClass: "text-center" }, [
                         _vm._v(
                           _vm._s(l.closed_at.substr(0, 10).replace(/-/g, "/"))
                         )
                       ]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(l.score) + "pt")]),
+                      _c("td", { staticClass: "text-center" }, [
+                        _vm._v(_vm._s(l.score) + "pt")
+                      ]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(l.description))]),
                       _vm._v(" "),
@@ -53220,13 +53224,17 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("タイトル")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("タイトル")]),
         _vm._v(" "),
-        _c("th", [_vm._v("作成日")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("作成日")]),
         _vm._v(" "),
-        _c("th", { staticStyle: { width: "15%" } }, [_vm._v("獲得可能スコア")]),
+        _c(
+          "th",
+          { staticClass: "text-center", staticStyle: { width: "15%" } },
+          [_vm._v("獲得可能スコア")]
+        ),
         _vm._v(" "),
-        _c("th", [_vm._v("説明")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("説明")]),
         _vm._v(" "),
         _c("th", [_vm._v(" ")]),
         _vm._v(" "),
@@ -53242,13 +53250,17 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("タイトル")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("タイトル")]),
         _vm._v(" "),
-        _c("th", [_vm._v("完了日")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("完了日")]),
         _vm._v(" "),
-        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("獲得スコア")]),
+        _c(
+          "th",
+          { staticClass: "text-center", staticStyle: { width: "10%" } },
+          [_vm._v("獲得スコア")]
+        ),
         _vm._v(" "),
-        _c("th", [_vm._v("説明")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("説明")]),
         _vm._v(" "),
         _c("th", [_vm._v(" ")]),
         _vm._v(" "),

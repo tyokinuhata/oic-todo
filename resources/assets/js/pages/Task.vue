@@ -23,10 +23,10 @@
             <table class="table">
               <thead>
               <tr>
-                <th>タイトル</th>
-                <th>作成日</th>
-                <th style="width: 15%;">獲得可能スコア</th>
-                <th>説明</th>
+                <th class="text-center">タイトル</th>
+                <th class="text-center">作成日</th>
+                <th class="text-center" style="width: 15%;">獲得可能スコア</th>
+                <th class="text-center">説明</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
@@ -35,8 +35,8 @@
               <tbody>
                 <tr v-for="l in lists.incomplete">
                   <td>{{ l.title }}</td>
-                  <td>{{ ((l.reopen_at).substr(0, 10)).replace(/-/g, '/') }}</td>
-                  <td>{{ l.acceptable_score }}pt</td>
+                  <td class="text-center">{{ ((l.reopen_at).substr(0, 10)).replace(/-/g, '/') }}</td>
+                  <td class="text-center">{{ l.acceptable_score }}pt</td>
                   <td>{{ l.description }}</td>
                   <td>
                     <button type="button" class="btn btn-primary" @click="closeTask(l.task_id)">完了</button>
@@ -55,10 +55,10 @@
             <table class="table">
               <thead>
               <tr>
-                <th>タイトル</th>
-                <th>完了日</th>
-                <th style="width: 10%;">獲得スコア</th>
-                <th>説明</th>
+                <th class="text-center">タイトル</th>
+                <th class="text-center">完了日</th>
+                <th class="text-center" style="width: 10%;">獲得スコア</th>
+                <th class="text-center">説明</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
@@ -67,8 +67,8 @@
               <tbody>
               <tr v-for="l in lists.complete">
                 <td>{{ l.title }}</td>
-                <td>{{ ((l.closed_at).substr(0, 10)).replace(/-/g, '/') }}</td>
-                <td>{{ l.score }}pt</td>
+                <td class="text-center">{{ ((l.closed_at).substr(0, 10)).replace(/-/g, '/') }}</td>
+                <td class="text-center">{{ l.score }}pt</td>
                 <td>{{ l.description }}</td>
                 <td>
                   <button type="button" class="btn btn-warning" @click="reopenTask(l.task_id)">未完了</button>
