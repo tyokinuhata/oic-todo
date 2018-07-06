@@ -117,6 +117,10 @@ class TaskController extends Controller
             return response('Not Found', 404);
         }
 
+        // トータルスコアの再計算
+        $score = Task::select('score')->where('task_id', $request->task_id)->first()->score;
+        User::where('token', $request->token)->decrement('total_score', $score);
+
         // 削除処理
         $task = Task::where('task_id', $request->task_id)->first();
         $task->delete();
