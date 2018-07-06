@@ -52575,7 +52575,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         incomplete: []
       },
       update: {
-        taskId: ''
+        taskId: '',
+        title: '',
+        description: ''
       }
     };
   },
@@ -52593,8 +52595,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this.getIncompleteTask();
       });
     },
-    updateTask: function updateTask(taskId) {
+    updateTask: function updateTask(taskId, title, description) {
       this.update.taskId = taskId;
+      this.update.title = title;
+      this.update.description = description;
     },
     deleteTask: function deleteTask(taskId) {
       var _this2 = this;
@@ -52764,12 +52768,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['taskId'],
+  props: ['taskId', 'title', 'description'],
   data: function data() {
     return {
-      token: '',
-      title: '',
-      description: ''
+      token: ''
     };
   },
 
@@ -53107,7 +53109,11 @@ var render = function() {
                                 },
                                 on: {
                                   click: function($event) {
-                                    _vm.updateTask(l.task_id)
+                                    _vm.updateTask(
+                                      l.task_id,
+                                      l.title,
+                                      l.description
+                                    )
                                   }
                                 }
                               },
@@ -53222,7 +53228,13 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("task-edit", { attrs: { taskId: _vm.update.taskId } })
+      _c("task-edit", {
+        attrs: {
+          taskId: _vm.update.taskId,
+          title: _vm.update.title,
+          description: _vm.update.description
+        }
+      })
     ],
     1
   )

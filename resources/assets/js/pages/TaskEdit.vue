@@ -23,12 +23,14 @@
 
 <script>
   export default {
-    props: ['taskId'],
+    props: [
+      'taskId',
+      'title',
+      'description'
+    ],
     data() {
       return {
         token: '',
-        title: '',
-        description: ''
       }
     },
     methods: {

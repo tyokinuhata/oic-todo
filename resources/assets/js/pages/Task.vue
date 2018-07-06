@@ -43,7 +43,7 @@
                       <button type="button" class="btn btn-primary" @click="closeTask(l.task_id)">完了</button>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTaskModal" @click="updateTask(l.task_id)">編集</button>
+                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTaskModal" @click="updateTask(l.task_id, l.title, l.description)">編集</button>
                     </td>
                     <td>
                       <button type="button" class="btn btn-danger" @click="deleteTask(l.task_id)">削除</button>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-    <task-edit :taskId="update.taskId"></task-edit>
+    <task-edit :taskId="update.taskId" :title="update.title" :description="update.description"></task-edit>
   </div>
 </template>
 
@@ -115,7 +115,9 @@ export default {
         incomplete: []
       },
       update: {
-        taskId: ''
+        taskId: '',
+        title: '',
+        description: ''
       }
     }
   },
@@ -131,8 +133,10 @@ export default {
         this.getIncompleteTask()
       })
     },
-    updateTask(taskId) {
+    updateTask(taskId, title, description) {
       this.update.taskId = taskId
+      this.update.title = title
+      this.update.description = description
     },
     deleteTask(taskId) {
       axios.post('/api/task/delete', {
