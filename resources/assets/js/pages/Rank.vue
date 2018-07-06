@@ -3,22 +3,24 @@
     <navi/>
     <div class="container">
       <h1 class="mt-4">TOP100ランキング</h1>
-      <table class="table mt-2">
-        <thead class="thead-dark">
-          <tr>
-            <th>#</th>
-            <th>ユーザ名</th>
-            <th>スコア</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="user, i in users">
-            <td>{{ i + 1 }}</td>
-            <td>{{ user.user_id }}</td>
-            <td>{{ user.total_score }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-hover mt-2">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>ユーザ名</th>
+              <th>スコア</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="user, i in users">
+              <td>{{ i + 1 }}</td>
+              <td>{{ user.user_id }}</td>
+              <td>{{ user.total_score }}pt</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>

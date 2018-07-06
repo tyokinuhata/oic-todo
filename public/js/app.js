@@ -52550,6 +52550,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -53051,23 +53055,108 @@ var render = function() {
               "div",
               { staticClass: "tab-pane active", attrs: { id: "incomplete" } },
               [
-                _c("table", { staticClass: "table" }, [
-                  _vm._m(0),
+                _c("div", { staticClass: "table-responsive" }, [
+                  _c("table", { staticClass: "table table-hover" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.lists.incomplete, function(l) {
+                        return _c("tr", [
+                          _c("td", [_vm._v(_vm._s(l.title))]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "text-center" }, [
+                            _vm._v(
+                              _vm._s(
+                                l.reopen_at.substr(0, 10).replace(/-/g, "/")
+                              )
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "text-center" }, [
+                            _vm._v(_vm._s(l.acceptable_score) + "pt")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(l.description))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-primary",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.closeTask(l.task_id)
+                                  }
+                                }
+                              },
+                              [_vm._v("完了")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-success",
+                                attrs: {
+                                  type: "button",
+                                  "data-toggle": "modal",
+                                  "data-target": "#updateTaskModal"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    _vm.updateTask(l.task_id)
+                                  }
+                                }
+                              },
+                              [_vm._v("編集")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-danger",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.deleteTask(l.task_id)
+                                  }
+                                }
+                              },
+                              [_vm._v("削除")]
+                            )
+                          ])
+                        ])
+                      })
+                    )
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "tab-pane", attrs: { id: "complete" } }, [
+              _c("div", { staticClass: "table-responsive" }, [
+                _c("table", { staticClass: "table table-hover" }, [
+                  _vm._m(1),
                   _vm._v(" "),
                   _c(
                     "tbody",
-                    _vm._l(_vm.lists.incomplete, function(l) {
+                    _vm._l(_vm.lists.complete, function(l) {
                       return _c("tr", [
                         _c("td", [_vm._v(_vm._s(l.title))]),
                         _vm._v(" "),
                         _c("td", { staticClass: "text-center" }, [
                           _vm._v(
-                            _vm._s(l.reopen_at.substr(0, 10).replace(/-/g, "/"))
+                            _vm._s(l.closed_at.substr(0, 10).replace(/-/g, "/"))
                           )
                         ]),
                         _vm._v(" "),
                         _c("td", { staticClass: "text-center" }, [
-                          _vm._v(_vm._s(l.acceptable_score) + "pt")
+                          _vm._v(_vm._s(l.score) + "pt")
                         ]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(l.description))]),
@@ -53076,15 +53165,15 @@ var render = function() {
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-primary",
+                              staticClass: "btn btn-warning",
                               attrs: { type: "button" },
                               on: {
                                 click: function($event) {
-                                  _vm.closeTask(l.task_id)
+                                  _vm.reopenTask(l.task_id)
                                 }
                               }
                             },
-                            [_vm._v("完了")]
+                            [_vm._v("未完了")]
                           )
                         ]),
                         _vm._v(" "),
@@ -53127,85 +53216,6 @@ var render = function() {
                     })
                   )
                 ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "tab-pane", attrs: { id: "complete" } }, [
-              _c("table", { staticClass: "table" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "tbody",
-                  _vm._l(_vm.lists.complete, function(l) {
-                    return _c("tr", [
-                      _c("td", [_vm._v(_vm._s(l.title))]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "text-center" }, [
-                        _vm._v(
-                          _vm._s(l.closed_at.substr(0, 10).replace(/-/g, "/"))
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "text-center" }, [
-                        _vm._v(_vm._s(l.score) + "pt")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(l.description))]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-warning",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.reopenTask(l.task_id)
-                              }
-                            }
-                          },
-                          [_vm._v("未完了")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-success",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "modal",
-                              "data-target": "#updateTaskModal"
-                            },
-                            on: {
-                              click: function($event) {
-                                _vm.updateTask(l.task_id)
-                              }
-                            }
-                          },
-                          [_vm._v("編集")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-danger",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.deleteTask(l.task_id)
-                              }
-                            }
-                          },
-                          [_vm._v("削除")]
-                        )
-                      ])
-                    ])
-                  })
-                )
               ])
             ])
           ])
@@ -53470,6 +53480,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -53536,21 +53548,23 @@ var render = function() {
       _c("div", { staticClass: "container" }, [
         _c("h1", { staticClass: "mt-4" }, [_vm._v("TOP100ランキング")]),
         _vm._v(" "),
-        _c("table", { staticClass: "table mt-2" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.users, function(user, i) {
-              return _c("tr", [
-                _c("td", [_vm._v(_vm._s(i + 1))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(user.user_id))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(user.total_score))])
-              ])
-            })
-          )
+        _c("div", { staticClass: "table-responsive" }, [
+          _c("table", { staticClass: "table table-hover mt-2" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.users, function(user, i) {
+                return _c("tr", [
+                  _c("td", [_vm._v(_vm._s(i + 1))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(user.user_id))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(user.total_score) + "pt")])
+                ])
+              })
+            )
+          ])
         ])
       ])
     ],
