@@ -16,6 +16,7 @@
                         @keyup.enter="signUp()"
                         type="text"
                         class="form-control"
+                        maxlength="16"
                         autofocus>
               </div>
               <div class="mt-3">
@@ -25,7 +26,8 @@
                         v-model="password"
                         @keyup.enter="signUp()"
                         type="password"
-                        class="form-control">
+                        class="form-control"
+                        maxlength="32">
               </div>
               <div class="mt-3">
                 <label for="confirm-password">パスワード(確認)</label>

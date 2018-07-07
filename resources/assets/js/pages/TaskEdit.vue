@@ -9,8 +9,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <input type="text" class="form-control" placeholder="タイトル" v-model="title">
-          <textarea class="form-control" placeholder="説明" v-model="description"></textarea>
+          <input type="text" class="form-control" placeholder="タイトル" v-model="title" maxlength="32" autofocus>
+          <textarea class="form-control" placeholder="説明" v-model="description" maxlength="1024"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>

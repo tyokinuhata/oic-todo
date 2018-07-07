@@ -16,6 +16,7 @@
                         @keyup.enter="signIn()"
                         type="text"
                         class="form-control"
+                        maxlength="16"
                         autofocus>
               </div>
               <div class="mt-3">
@@ -25,7 +26,8 @@
                         v-model="form.password"
                         @keyup.enter="signIn()"
                         type="password"
-                        class="form-control">
+                        class="form-control"
+                        maxlength="32">
               </div>
               <div class="text-right mt-3">
                 <router-link to="/signup">サインアップはこちら</router-link>

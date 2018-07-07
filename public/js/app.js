@@ -51119,6 +51119,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51786,7 +51788,12 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { id: "user-id", type: "text", autofocus: "" },
+                  attrs: {
+                    id: "user-id",
+                    type: "text",
+                    maxlength: "16",
+                    autofocus: ""
+                  },
                   domProps: { value: _vm.form.userId },
                   on: {
                     keyup: function($event) {
@@ -51823,7 +51830,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { id: "password", type: "password" },
+                  attrs: { id: "password", type: "password", maxlength: "32" },
                   domProps: { value: _vm.form.password },
                   on: {
                     keyup: function($event) {
@@ -51992,6 +51999,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -52061,7 +52070,12 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { id: "user-id", type: "text", autofocus: "" },
+                  attrs: {
+                    id: "user-id",
+                    type: "text",
+                    maxlength: "16",
+                    autofocus: ""
+                  },
                   domProps: { value: _vm.userId },
                   on: {
                     keyup: function($event) {
@@ -52098,7 +52112,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { id: "password", type: "password" },
+                  attrs: { id: "password", type: "password", maxlength: "32" },
                   domProps: { value: _vm.password },
                   on: {
                     keyup: function($event) {
@@ -52646,7 +52660,12 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", placeholder: "タイトル" },
+              attrs: {
+                type: "text",
+                placeholder: "タイトル",
+                maxlength: "32",
+                autofocus: ""
+              },
               domProps: { value: _vm.title },
               on: {
                 input: function($event) {
@@ -52668,7 +52687,7 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { placeholder: "説明" },
+              attrs: { placeholder: "説明", maxlength: "1024" },
               domProps: { value: _vm.description },
               on: {
                 input: function($event) {
@@ -52767,7 +52786,12 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "タイトル", autofocus: "" },
+            attrs: {
+              type: "text",
+              placeholder: "タイトル",
+              maxlength: "32",
+              autofocus: ""
+            },
             domProps: { value: _vm.add.title },
             on: {
               input: function($event) {
@@ -52789,7 +52813,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control mt-2",
-            attrs: { placeholder: "説明", rows: "8" },
+            attrs: { placeholder: "説明", rows: "8", maxlength: "1024" },
             domProps: { value: _vm.add.description },
             on: {
               input: function($event) {
