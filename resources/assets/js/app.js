@@ -16,6 +16,7 @@ import Task from './pages/Task'
 import Mypage from './pages/Mypage'
 import Config from './pages/Config'
 import Rank from './pages/Rank'
+import NotFound from './pages/NotFound'
 
 const routes = [
   {
@@ -41,6 +42,15 @@ const routes = [
   {
     path: '/config',
     component: Config
+  },
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: NotFound,
+  },
+  {
+    path: '*',
+    redirect: { name: 'NotFound' }
   }
 ]
 
