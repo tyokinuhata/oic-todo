@@ -52365,6 +52365,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -52775,6 +52776,8 @@ var render = function() {
       _c("navi"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
+        _c("h1", { staticClass: "h1 mt-4" }, [_vm._v("タスク一覧")]),
+        _vm._v(" "),
         _c("div", { staticClass: "mt-4" }, [
           _c("input", {
             directives: [

@@ -2,6 +2,7 @@
   <div>
     <navi/>
     <div class="container">
+      <h1 class="h1 mt-4">タスク一覧</h1>
       <div class="mt-4">
         <input type="text" class="form-control" placeholder="タイトル" v-model="add.title" maxlength="32" autofocus>
         <textarea class="form-control mt-2" placeholder="説明" rows="8" v-model="add.description" maxlength="1024"></textarea>
