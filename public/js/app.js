@@ -52783,6 +52783,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         title: this.title,
         description: this.description
       });
+      // TODO: emitで実装したい
+      location.reload();
     },
     getToken: function getToken() {
       var cookie = document.cookie.replace(/\s+/g, '').split(';');

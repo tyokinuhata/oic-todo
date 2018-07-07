@@ -41,6 +41,8 @@
           title: this.title,
           description: this.description
         })
+        // TODO: emitで実装したい
+        location.reload()
       },
       getToken() {
         const cookie = document.cookie.replace(/\s+/g, '').split(';')
