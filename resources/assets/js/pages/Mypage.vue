@@ -2,13 +2,19 @@
   <div>
     <navi/>
     <div class="container">
-      <div>
-        <span>ユーザID: </span>
-        <span>{{ user.user_id }}</span>
-      </div>
-      <div>
-        <span>トータルスコア: </span>
-        <span>{{ user.total_score }}</span>
+      <h1 class="h1 mt-4">マイページ</h1>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="../../../assets/img/default-icon.png" alt="">
+            </div>
+            <div class="col-md-9 mt-4">
+              <div class="h3">ユーザID: {{ user.user_id }}</div>
+              <div class="h4">トータルスコア: {{ user.total_score }}pt</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

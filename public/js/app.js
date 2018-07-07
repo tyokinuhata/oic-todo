@@ -53522,6 +53522,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -53597,23 +53603,44 @@ var render = function() {
       _c("navi"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("div", [
-          _c("span", [_vm._v("ユーザID: ")]),
-          _vm._v(" "),
-          _c("span", [_vm._v(_vm._s(_vm.user.user_id))])
-        ]),
+        _c("h1", { staticClass: "h1 mt-4" }, [_vm._v("マイページ")]),
         _vm._v(" "),
-        _c("div", [
-          _c("span", [_vm._v("トータルスコア: ")]),
-          _vm._v(" "),
-          _c("span", [_vm._v(_vm._s(_vm.user.total_score))])
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-9 mt-4" }, [
+                _c("div", { staticClass: "h3" }, [
+                  _vm._v("ユーザID: " + _vm._s(_vm.user.user_id))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "h4" }, [
+                  _vm._v(
+                    "トータルスコア: " + _vm._s(_vm.user.total_score) + "pt"
+                  )
+                ])
+              ])
+            ])
+          ])
         ])
       ])
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("img", {
+        attrs: { src: __webpack_require__(93), alt: "" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -53750,6 +53777,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   }
 });
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/default-icon.png?19d0810bafaa5b36237cf196d3f715c3";
 
 /***/ })
 /******/ ]);
