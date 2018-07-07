@@ -53,7 +53,7 @@
 <script>
 export default {
   created() {
-    if (document.cookie.indexOf("token") === -1) {
+    if (!this.$store.getters.signedIn) {
       this.$router.push({ path: "/" });
     }
   },
