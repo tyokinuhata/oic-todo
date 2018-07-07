@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\Task;
-use DB;
 
 /**
  * タスク管理に関するコントローラ.
@@ -26,7 +25,7 @@ class TaskController extends Controller
         }
 
         // 登録処理
-        DB::table('tasks')->insert([
+        Task::create([
             'task_id' => uniqid(),
             'title' => $request->title,
             'description' => $request->description,
