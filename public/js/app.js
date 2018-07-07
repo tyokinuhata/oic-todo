@@ -52689,8 +52689,8 @@ var render = function() {
                   expression: "description"
                 }
               ],
-              staticClass: "form-control",
-              attrs: { placeholder: "説明", maxlength: "1024" },
+              staticClass: "form-control mt-2",
+              attrs: { placeholder: "説明", rows: "12", maxlength: "1024" },
               domProps: { value: _vm.description },
               on: {
                 input: function($event) {
