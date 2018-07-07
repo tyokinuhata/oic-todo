@@ -52857,8 +52857,11 @@ var render = function() {
                   attrs: { href: "#incomplete", "data-toggle": "tab" }
                 },
                 [
-                  _vm._v(
-                    "未完了タスク(" + _vm._s(_vm.lists.incomplete.length) + ")"
+                  _vm._v("未完了タスク "),
+                  _c(
+                    "span",
+                    { staticClass: "badge badge-pill badge-warning" },
+                    [_vm._v(_vm._s(_vm.lists.incomplete.length))]
                   )
                 ]
               )
@@ -52872,8 +52875,11 @@ var render = function() {
                   attrs: { href: "#complete", "data-toggle": "tab" }
                 },
                 [
-                  _vm._v(
-                    "完了タスク(" + _vm._s(_vm.lists.complete.length) + ")"
+                  _vm._v("完了タスク "),
+                  _c(
+                    "span",
+                    { staticClass: "badge badge-pill badge-primary" },
+                    [_vm._v(_vm._s(_vm.lists.complete.length))]
                   )
                 ]
               )

@@ -13,10 +13,10 @@
       <div class="mt-4">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a href="#incomplete" class="nav-link active" data-toggle="tab">未完了タスク({{ lists.incomplete.length }})</a>
+            <a href="#incomplete" class="nav-link active" data-toggle="tab">未完了タスク <span class="badge badge-pill badge-warning">{{ lists.incomplete.length }}</span></a>
           </li>
           <li class="nav-item">
-            <a href="#complete" class="nav-link" data-toggle="tab">完了タスク({{ lists.complete.length }})</a>
+            <a href="#complete" class="nav-link" data-toggle="tab">完了タスク <span class="badge badge-pill badge-primary">{{ lists.complete.length }}</span></a>
           </li>
         </ul>
         <div class="tab-content">
