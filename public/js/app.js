@@ -51604,7 +51604,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
-    if (!this.$store.getters.signedIn) {
+    if (document.cookie.indexOf("token") === 0) {
+      this.$store.commit('setSignedIn', true);
+    } else if (!this.$store.getters.signedIn) {
       this.$router.push({ path: "/" });
     }
   },
@@ -53735,8 +53737,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   created: function created() {
-    if (this.$store.getters.signedIn) {
-      this.signedIn = true;
+    if (document.cookie.indexOf("token") === 0) {
+      this.$store.commit('setSignedIn', true);
+    } else if (!this.$store.getters.signedIn) {
+      this.$router.push({ path: "/" });
     }
   }
 });

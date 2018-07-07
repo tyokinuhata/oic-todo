@@ -19,8 +19,11 @@
       }
     },
     created() {
-      if (this.$store.getters.signedIn) {
-        this.signedIn = true
+      if (document.cookie.indexOf("token") === 0) {
+        this.$store.commit('setSignedIn', true);
+      }
+      else if (!this.$store.getters.signedIn) {
+        this.$router.push({ path: "/" });
       }
     }
   }

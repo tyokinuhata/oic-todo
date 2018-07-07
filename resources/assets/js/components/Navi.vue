@@ -53,7 +53,10 @@
 <script>
 export default {
   created() {
-    if (!this.$store.getters.signedIn) {
+    if (document.cookie.indexOf("token") === 0) {
+      this.$store.commit('setSignedIn', true);
+    }
+    else if (!this.$store.getters.signedIn) {
       this.$router.push({ path: "/" });
     }
   },
