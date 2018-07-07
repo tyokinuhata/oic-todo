@@ -22,3 +22,9 @@ $ make vup
 $ npm run watch
 $ open http://{your_private_ip_address}:8000  // or open localhost:8000
 ```
+
+### コードの圧縮(フロントエンド)
+
+```bash
+$ npm run production
+```
