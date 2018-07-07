@@ -34,7 +34,7 @@ class AuthController extends Controller
         $token = Hash::make(strval(time()) . $request->user_id . $request->password);
 
         // 登録処理
-        DB::table('users')->insert([
+        User::create([
             'user_id' => $request->user_id,
             'password' => bcrypt($request->password),
             'token' => $token
