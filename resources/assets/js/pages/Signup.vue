@@ -70,11 +70,17 @@ export default {
         })
         .then(response => {
           document.cookie = "token=" + response.data + "; max-age=3600";
+          this.$store.commit('setSignedIn', true);
           this.$router.push({ path: "/task" });
         })
         .catch(error => {
           console.log(error.response);
         });
+    }
+  },
+  created() {
+    if (this.$store.getters.signedIn) {
+      this.$router.push({ path: '/task' });
     }
   }
 };

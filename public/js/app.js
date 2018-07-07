@@ -52002,10 +52002,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         password_confirm: this.confirmPassword
       }).then(function (response) {
         document.cookie = "token=" + response.data + "; max-age=3600";
+        _this.$store.commit('setSignedIn', true);
         _this.$router.push({ path: "/task" });
       }).catch(function (error) {
         console.log(error.response);
       });
+    }
+  },
+  created: function created() {
+    if (this.$store.getters.signedIn) {
+      this.$router.push({ path: '/task' });
     }
   }
 });
