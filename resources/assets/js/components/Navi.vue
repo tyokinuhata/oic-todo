@@ -20,11 +20,6 @@
         class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li>
-            <router-link
-              class="nav-link"
-              to="/">トップ</router-link>
-          </li>
-          <li>
             <router-link 
               class="nav-link" 
               to="/task">タスク</router-link>
