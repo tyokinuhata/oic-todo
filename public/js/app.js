@@ -53595,7 +53595,7 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(92)
 /* template */
 var __vue_template__ = __webpack_require__(91)
 /* template functional */
@@ -53643,22 +53643,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "text-center mt-4" }, [
+    _c("h1", { staticClass: "h1" }, [_vm._v("404 Not Found")]),
+    _vm._v(" "),
+    _c("p", { staticClass: "h4" }, [
+      _vm._v("(ᵔᴥᵔ) お探しのページは見つかりませんでした。残念でした。 (ᵔᴥᵔ)")
+    ]),
+    _vm._v(" "),
+    _vm.signedIn
+      ? _c(
+          "div",
+          [
+            _c("router-link", { attrs: { to: "/task" } }, [
+              _vm._v("タスクページへ")
+            ])
+          ],
+          1
+        )
+      : _c(
+          "div",
+          [
+            _c("router-link", { attrs: { to: "/" } }, [
+              _vm._v("トップページへ")
+            ])
+          ],
+          1
+        )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center mt-4" }, [
-      _c("h1", { staticClass: "h1" }, [_vm._v("404 Not Found")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "h4" }, [
-        _vm._v("(ᵔᴥᵔ) お探しのページは見つかりませんでした。残念でした。 (ᵔᴥᵔ)")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -53667,6 +53680,39 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-f07f1fa8", module.exports)
   }
 }
+
+/***/ }),
+/* 92 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      signedIn: false
+    };
+  },
+  created: function created() {
+    if (this.$store.getters.signedIn) {
+      this.signedIn = true;
+    }
+  }
+});
 
 /***/ })
 /******/ ]);
