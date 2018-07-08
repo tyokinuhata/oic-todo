@@ -20,3 +20,4 @@ deploy:
 	heroku run composer dump-autoload --optimize
 	heroku run php artisan route:cache
 	heroku run php artisan config:cache
+	heroku run npm run production
