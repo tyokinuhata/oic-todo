@@ -14,3 +14,9 @@ fix:
 	./node_modules/.bin/eslint --fix resources/assets/js/**/*.vue
 	php ./vendor/bin/php-cs-fixer fix ./app
 	php ./vendor/bin/php-cs-fixer fix ./database
+
+deploy:
+	git push heroku master
+	heroku run composer dump-autoload --optimize
+	heroku run php artisan route:cache
+	heroku run php artisan config:cache
