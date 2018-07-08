@@ -18,6 +18,7 @@ fix:
 deploy:
 	git push heroku master
 	heroku run composer dump-autoload --optimize
+	heroku run php artisan clear-compiled
 	heroku run php artisan route:cache
 	heroku run php artisan config:cache
-	heroku run npm run production
+	heroku run php artisan view:clear
