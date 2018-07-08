@@ -7,7 +7,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-3">
-              <img src="../../../assets/img/default-icon.png" alt="">
+              <img src="../../../assets/images/default-icon.png" alt="">
             </div>
             <div class="col-md-9 mt-4">
               <div class="h3">ユーザID: {{ user.user_id }}</div>
