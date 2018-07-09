@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\Task;
+use Validator;
 
 /**
  * タスク管理に関するコントローラ.
@@ -22,6 +23,23 @@ class TaskController extends Controller
         $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
         if (!isset($user_id)) {
             return response('Not Found', 404);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'title' => [
+                'required',
+                'string',
+                'max: 32'
+            ],
+            'description' => [
+                'required',
+                'string',
+                'max: 1024'
+            ]
+        ]);
+
+        if ($validator->fails()) {
+            return response('Bad Request', 400);
         }
 
         // 登録処理
@@ -94,6 +112,24 @@ class TaskController extends Controller
         $user_id = User::select('user_id')->where('token', $request->token)->first()->user_id;
         if (!isset($user_id)) {
             return response('Not Found', 404);
+        }
+
+        // TODO: task_idのバリデーション
+        $validator = Validator::make($request->all(), [
+            'title' => [
+                'required',
+                'string',
+                'max: 32'
+            ],
+            'description' => [
+                'required',
+                'string',
+                'max: 1024'
+            ]
+        ]);
+
+        if ($validator->fails()) {
+            return response('Bad Request', 400);
         }
 
         // 更新処理
